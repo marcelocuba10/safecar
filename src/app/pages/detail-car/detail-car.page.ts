@@ -4,8 +4,6 @@ import { LoadingController, NavController } from '@ionic/angular';
 import { Cars } from 'src/app/models/cars';
 import { AppService } from 'src/app/services/app.service';
 import { ApiService } from './../../services/api.service';
-
-
 @Component({
   selector: 'app-detail-car',
   templateUrl: './detail-car.page.html',
