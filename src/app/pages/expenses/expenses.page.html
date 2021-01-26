@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Despesas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/detail-workshop']">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--  <ion-item *ngFor="let workshop of workshops" [routerLink]="['/detail-workshop/', workshop.id]">-->
+  <ion-card>
+  <ion-item>
+    <ion-thumbnail slot="start">
+      <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="cash-outline"></ion-icon>
+    </ion-thumbnail>
+    <ion-label>
+      <h3>Compra de Pneus</h3>
+      <p>Comercial Continental</p>
+      <p>600,00 RS</p>
+    </ion-label>
+  </ion-item>
+</ion-card>
+  <ion-card>
+  <ion-item>
+    <ion-thumbnail slot="start">
+      <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="cash-outline"></ion-icon>
+    </ion-thumbnail>
+    <ion-label>
+      <h3>Chaperia Pintura</h3>
+      <p>Comercial San jose</p>
+      <p>1,200,00 RS</p>
+    </ion-label>
+  </ion-item>
+</ion-card>
+</ion-content>

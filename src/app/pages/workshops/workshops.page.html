@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Mecanicas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/detail-workshop']">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-card *ngFor="let workshop of workshops" [routerLink]="['/detail-workshop/', workshop.id]">
+  <ion-item >
+    <ion-thumbnail slot="start">
+      <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="car-sport-outline"></ion-icon>
+    </ion-thumbnail>
+    <ion-label>
+      <h3>{{workshop.nome}}</h3>
+      <p>Av Aviadores del chaco #3454</p>
+      <p>0994 994 272</p>
+    </ion-label>
+  </ion-item>
+  </ion-card>
+
+</ion-content>

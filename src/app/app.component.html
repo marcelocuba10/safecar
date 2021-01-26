@@ -1,0 +1,59 @@
+<ion-app>
+    <ion-split-pane contentId="menu-content" when="xs" [disabled]="true"
+    (ionSplitPaneVisible)="onSplitPaneVisible(event)">
+    <ion-menu contentId="menu-content" menuId="menu-content" side="start" type="overlay">
+      <ion-header>
+        <ion-toolbar translucent>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/tabs']">
+              <ion-icon name="home" slot="start"></ion-icon>
+              <ion-label>Inicio</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/workshops']">
+              <ion-icon name="location-outline" slot="start"></ion-icon>
+              <ion-label>Mecanicas</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/cars']">
+              <ion-icon name="car-sport-outline" slot="start"></ion-icon>
+              <ion-label>Veiculos</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/expenses']">
+              <ion-icon name="cash-outline" slot="start"></ion-icon>
+              <ion-label>Despesas</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/maintenances']">
+              <ion-icon name="build-outline" slot="start"></ion-icon>
+              <ion-label>Manutencoes</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/user']">
+              <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+              <ion-label>Meu Perfil</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item>
+              <ion-icon name="log-out-outline" slot="start"></ion-icon>
+              <ion-label>Sair</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

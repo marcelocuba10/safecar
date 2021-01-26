@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/product"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Detalle Producto</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <div style="text-align:center">
+      <img *ngIf="productId" src="{{product.image}}"/>
+    </div>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input autocapitalize autofocus required [(ngModel)]="product.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Precio Compra</ion-label>
+        <ion-input required type="number" [(ngModel)]="product.purchase_price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Precio Venta</ion-label>
+        <ion-input required type="number" [(ngModel)]="product.sale_price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Volúmen</ion-label>
+        <ion-select required [(ngModel)]="product.volume" ok-text="Aceptar" cancel-text="Cancelar">
+          <ion-select-option value="500ml">500 ml</ion-select-option>
+          <ion-select-option value="1Litro">1 Litro</ion-select-option>
+          <ion-select-option value="2Litros">2 Litros</ion-select-option>
+          <ion-select-option value="5Litros">5 Litros</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Stock</ion-label>
+        <ion-input required type="number" [(ngModel)]="product.quantity"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Imagen</ion-label>
+        <ion-input type="text" [(ngModel)]="product.image"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Categoría</ion-label>
+        <ion-select required [(ngModel)]="product.category" ok-text="Aceptar" cancel-text="Cancelar">
+          <ion-select-option *ngFor="let category of categories" [value]="category.name">{{category.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item-group class="ion-text-center">
+        <ion-button color="success" (click)="saveProduct(product)">
+          <ion-icon class="m-icon" name="save-outline"></ion-icon>Guardar
+        </ion-button>
+      </ion-item-group>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
