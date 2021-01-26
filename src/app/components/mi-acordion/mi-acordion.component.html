@@ -1,0 +1,23 @@
+
+<ion-item (click)="toggleAccordion()" class="ion-padding-top">
+      <ion-thumbnail slot="start">
+        <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="car-sport-outline"></ion-icon>
+      </ion-thumbnail>
+  <ion-label>{{ nome }}</ion-label>
+  <ion-icon slot="end" *ngIf="isMenuOpen" name="chevron-down-outline"></ion-icon>
+  <ion-icon slot="end" *ngIf="!isMenuOpen" name="chevron-forward-outline"></ion-icon>
+</ion-item>
+
+<ion-card [ngClass]="this.isMenuOpen ? 'active' : 'inactive'">
+  <ion-card-header>
+    <ion-card-subtitle><b>Responsavel:</b> {{responsavel}}</ion-card-subtitle>
+    <ion-card-subtitle><b>RUC:</b> {{RUC}}</ion-card-subtitle>
+    <ion-card-subtitle><b>Endereco:</b> {{endereco}}</ion-card-subtitle>
+    <ion-card-subtitle><b>Telefone:</b> {{telefone}}</ion-card-subtitle>
+    <ion-card-subtitle><b>Email:</b> {{email}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-item>
+      <ion-button (click)="broadcastName(endereco)" fill="outline" color="success" slot="end">Abrir Maps<ion-icon name="location-outline"></ion-icon></ion-button>
+      <ion-button (click)="broadcastName(telefone)" fill="outline" color="warning" slot="end">Chamar<ion-icon name="call-outline"></ion-icon></ion-button>
+  </ion-item>
+</ion-card>

@@ -1,6 +1,6 @@
 import { FormsModule } from '@angular/forms';
 import { MbscModule } from '@mobiscroll/angular';
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -16,17 +16,17 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ 
-    FormsModule,  
-    MbscModule, 
-    BrowserModule, 
-    IonicModule.forRoot(), 
+  imports: [
+    FormsModule,
+    MbscModule,
+    BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     //agregamos en nuestro Import
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -38,8 +38,9 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },FileOpener
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FileOpener
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }
