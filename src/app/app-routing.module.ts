@@ -7,48 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'product',
-    loadChildren: () => import('./pages/product/product.module').then( m => m.ProductPageModule)
-  },
-  {
-    path: 'detail-product/:id',
-    loadChildren: () => import('./pages/detail-product/detail-product.module').then( m => m.DetailProductPageModule)
-  },
-  {
-    path: 'detail-product',
-    loadChildren: () => import('./pages/detail-product/detail-product.module').then( m => m.DetailProductPageModule)
-  },
-  {
-    path: 'orders',
-    loadChildren: () => import('./pages/orders/orders.module').then( m => m.OrdersPageModule)
-  },
-  {
-    path: 'sales',
-    loadChildren: () => import('./pages/sales/sales.module').then( m => m.SalesPageModule)
-  },
-  {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: 'detail-sale',
-    loadChildren: () => import('./pages/detail-sale/detail-sale.module').then( m => m.DetailSalePageModule)
-  },
-  {
-    path: 'modal-product',
-    loadChildren: () => import('./pages/modal-product/modal-product.module').then( m => m.ModalProductPageModule)
-  },
-  {
-    path: 'modal-detail',
-    loadChildren: () => import('./pages/modal-detail/modal-detail.module').then( m => m.ModalDetailPageModule)
-  },
-  {
-    path: 'modal-detail/:id',
-    loadChildren: () => import('./pages/modal-detail/modal-detail.module').then( m => m.ModalDetailPageModule)
-  },
-  {
-    path: 'detail-order',
-    loadChildren: () => import('./pages/detail-order/detail-order.module').then( m => m.DetailOrderPageModule)
   },
   {
     path: 'cars',

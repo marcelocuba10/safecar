@@ -12,46 +12,6 @@ const routes: Routes = [
         loadChildren: () => import('../pages/home/home.module').then(m => m.HomePageModule)
       },
       {
-        path: 'product',
-        loadChildren: () => import('../pages/product/product.module').then(m => m.ProductPageModule)
-      },
-      {
-        path: 'orders',
-        loadChildren: () => import('../pages/orders/orders.module').then(m => m.OrdersPageModule)
-      },
-      {
-        path: 'sales',
-        loadChildren: () => import('../pages/sales/sales.module').then(m => m.SalesPageModule)
-      },
-      {
-        path: 'detail-product/:id',
-        loadChildren: () => import('../pages/detail-product/detail-product.module').then(m => m.DetailProductPageModule)
-      },
-      {
-        path: 'detail-product',
-        loadChildren: () => import('../pages/detail-product/detail-product.module').then(m => m.DetailProductPageModule)
-      },
-      {
-        path: 'detail-sale/:id',
-        loadChildren: () => import('../pages/detail-sale/detail-sale.module').then(m => m.DetailSalePageModule)
-      },
-      {
-        path: 'detail-sale',
-        loadChildren: () => import('../pages/detail-sale/detail-sale.module').then(m => m.DetailSalePageModule)
-      },
-      {
-        path: 'modal-detail/:id',
-        loadChildren: () => import('../pages/modal-detail/modal-detail.module').then(m => m.ModalDetailPageModule)
-      },
-      {
-        path: 'detail-order/:id',
-        loadChildren: () => import('../pages/detail-order/detail-order.module').then(m => m.DetailOrderPageModule)
-      },
-      {
-        path: 'detail-order',
-        loadChildren: () => import('../pages/detail-order/detail-order.module').then(m => m.DetailOrderPageModule)
-      },
-      {
         path: 'cars',
         loadChildren: () => import('../pages/cars/cars.module').then(m => m.CarsPageModule)
       },
@@ -126,56 +86,6 @@ const routes: Routes = [
   {
     path: 'home',
     redirectTo: '/tabs/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'product',
-    redirectTo: '/tabs/product',
-    pathMatch: 'full'
-  },
-  {
-    path: 'orders',
-    redirectTo: '/tabs/orders',
-    pathMatch: 'full'
-  },
-  {
-    path: 'sales',
-    redirectTo: '/tabs/sales',
-    pathMatch: 'full'
-  },
-  {
-    path: 'detail-product/:id',
-    redirectTo: '/tabs/detail-product/:id',
-    pathMatch: 'full'
-  },
-  {
-    path: 'detail-product',
-    redirectTo: '/tabs/detail-product',
-    pathMatch: 'full'
-  },
-  {
-    path: 'detail-sale/:id',
-    redirectTo: '/tabs/detail-sale/:id',
-    pathMatch: 'full'
-  },
-  {
-    path: 'detail-sale',
-    redirectTo: '/tabs/detail-sale',
-    pathMatch: 'full'
-  },
-  {
-    path: 'modal-detail/:id',
-    redirectTo: '/tabs/modal-detail/:id',
-    pathMatch: 'full'
-  },
-  {
-    path: 'detail-order/:id',
-    redirectTo: '/tabs/detail-order/:id',
-    pathMatch: 'full'
-  },
-  {
-    path: 'detail-order',
-    redirectTo: '/tabs/detail-order',
     pathMatch: 'full'
   },
   {

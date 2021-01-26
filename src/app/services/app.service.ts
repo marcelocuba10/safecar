@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastController, LoadingController, AlertController } from '@ionic/angular';
 
@@ -7,7 +6,6 @@ import { ToastController, LoadingController, AlertController } from '@ionic/angu
   providedIn: 'root'
 })
 export class AppService {
-  product = {} as Product;
   private loading: any;
 
   constructor(
