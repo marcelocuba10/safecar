@@ -19,47 +19,38 @@
 
   <ion-card>
     <ion-card-content>
+      <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button color="success">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
       <center>
-        <img style="width:70%" src="https://cdn.revendamais.com.br/FC/5358/2790454_0_M_fdc3a39cc0.jpg" />
+        <img style="width:70%" src="../../../assets/img/no-image.png" />
       </center>
       <ion-item>
         <ion-label position="stacked">Nome</ion-label>
         <ion-input type="text" autofocus required [(ngModel)]="car.nome"></ion-input>
       </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Modelo</ion-label>
+        <ion-input type="text" required [(ngModel)]="car.modelo"></ion-input>
+      </ion-item>
       <ion-grid>
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label position="stacked">Modelo</ion-label>
-              <ion-input type="text" required [(ngModel)]="car.modelo"></ion-input>
+              <ion-label position="stacked">Quilometragem</ion-label>
+              <ion-input type="text" required [(ngModel)]="car.km"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
-              <ion-label position="stacked">Marca</ion-label>
-              <ion-select interface="popover" required [(ngModel)]="car.marca">
-                <ion-select-option value="Audi">Audi</ion-select-option>
-                <ion-select-option value="BMW">BMW</ion-select-option>
-                <ion-select-option value="Toyota">Toyota</ion-select-option>
-                <ion-select-option value="Nissan">Nissan</ion-select-option>
-                <ion-select-option value="Wolkswagen">Wolkswagen</ion-select-option>
-                <ion-select-option value="Ford">Ford</ion-select-option>
-                <ion-select-option value="Fiat">Fiat</ion-select-option>
-              </ion-select>
+              <ion-label position="stacked">Placa</ion-label>
+              <ion-input type="text" required [(ngModel)]="car.placa"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
       </ion-grid> 
-      <ion-item>
-        <ion-label position="stacked">Quilometragem</ion-label>
-        <ion-range required [(ngModel)]="car.km" pin="true" min="0" max="300">
-          <ion-icon name="timer-outline" slot="start"></ion-icon>
-          <ion-icon name="timer-outline" slot="end"></ion-icon>
-        </ion-range>
-      </ion-item>
-      <ion-item class="ion-text-center">
-        <ion-input type="text" required [(ngModel)]="car.km"></ion-input>
-      </ion-item>
       <ion-grid> 
         <ion-row>
           <ion-col>
@@ -84,22 +75,41 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label position="stacked">Placa</ion-label>
-              <ion-input type="text" required [(ngModel)]="car.placa"></ion-input>
+              <ion-label position="stacked">Marca</ion-label>
+              <ion-select interface="popover" required [(ngModel)]="car.marca">
+                <ion-select-option value="Audi">Audi</ion-select-option>
+                <ion-select-option value="BMW">BMW</ion-select-option>
+                <ion-select-option value="Toyota">Toyota</ion-select-option>
+                <ion-select-option value="Nissan">Nissan</ion-select-option>
+                <ion-select-option value="Wolkswagen">Wolkswagen</ion-select-option>
+                <ion-select-option value="Ford">Ford</ion-select-option>
+                <ion-select-option value="Fiat">Fiat</ion-select-option>
+              </ion-select>
             </ion-item>
           </ion-col>
           <ion-col>
-            <ion-item>
-              <ion-label position="stacked">Cor</ion-label>
-              <ion-input type="text" required [(ngModel)]="car.cor"></ion-input>
-            </ion-item>
+              <ion-item>
+                <ion-label position="stacked">Cor</ion-label>
+                <ion-select interface="popover" required [(ngModel)]="car.cor">
+                  <ion-select-option value="Amarelo">Amarelo</ion-select-option>
+                  <ion-select-option value="Azul">Azul</ion-select-option>
+                  <ion-select-option value="Preto">Preto</ion-select-option>
+                  <ion-select-option value="Branco">Branco</ion-select-option>
+                  <ion-select-option value="Cinza">Cinza</ion-select-option>
+                  <ion-select-option value="Verde">Verde</ion-select-option>
+                  <ion-select-option value="Vermelho">Vermelho</ion-select-option>
+                </ion-select>
+              </ion-item>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <ion-item>
               <ion-label position="stacked">Carroceria</ion-label>
-              <ion-input type="text" required [(ngModel)]="car.carroceria"></ion-input>
+              <ion-select interface="popover" required [(ngModel)]="car.carroceria">
+                <ion-select-option value="Hatch">Hatch</ion-select-option>
+                <ion-select-option value="Sedan">Sedan</ion-select-option>
+              </ion-select>
             </ion-item>
           </ion-col>
           <ion-col>
@@ -107,7 +117,9 @@
               <ion-label position="stacked">Portas</ion-label>
               <ion-select interface="popover" required [(ngModel)]="car.portas">
                 <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
                 <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
                 <ion-select-option value="6">6</ion-select-option>
               </ion-select>
             </ion-item>
@@ -138,6 +150,10 @@
       <ion-item>
         <ion-label position="stacked">Chassi</ion-label>
         <ion-input type="text" required [(ngModel)]="car.chassi"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Observações</ion-label>
+        <ion-textarea placeholder="..."></ion-textarea>
       </ion-item>
       <ion-item-group class="ion-text-center ion-margin-top">
         <ion-button color="medium" routerLink="/cars">

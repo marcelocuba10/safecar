@@ -17,7 +17,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"triangle\"></ion-icon>\n      <ion-label>Tab 1</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"ellipse\"></ion-icon>\n      <ion-label>Tab 2</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"square\"></ion-icon>\n      <ion-label>Tab 3</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n";
+    __webpack_exports__["default"] = "<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\" color=\"tertiary\">\r\n    <ion-tab-button tab=\"cars\">\r\n      <ion-icon name=\"car-outline\"></ion-icon>\r\n      <ion-label>Veiculos</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"workshops\">\r\n      <ion-icon name=\"location-outline\"></ion-icon>\r\n      <ion-label>Mecanicas</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"expenses\">\r\n      <ion-icon name=\"cash-outline\"></ion-icon>\r\n      <ion-label>Despesas</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"user\">\r\n      <ion-icon name=\"person-outline\"></ion-icon>\r\n      <ion-label>Meu Perfil</ion-label>\r\n    </ion-tab-button>\r\n\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>";
     /***/
   },
 
@@ -69,46 +69,242 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       path: 'tabs',
       component: _tabs_page__WEBPACK_IMPORTED_MODULE_3__["TabsPage"],
       children: [{
-        path: 'tab1',
+        path: 'cars',
         loadChildren: function loadChildren() {
           return Promise.all(
-          /*! import() | tab1-tab1-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("tab1-tab1-module")]).then(__webpack_require__.bind(null,
-          /*! ../tab1/tab1.module */
-          "./src/app/tab1/tab1.module.ts")).then(function (m) {
-            return m.Tab1PageModule;
+          /*! import() | pages-cars-cars-module */
+          [__webpack_require__.e("common"), __webpack_require__.e("pages-cars-cars-module")]).then(__webpack_require__.bind(null,
+          /*! ../pages/cars/cars.module */
+          "./src/app/pages/cars/cars.module.ts")).then(function (m) {
+            return m.CarsPageModule;
           });
         }
       }, {
-        path: 'tab2',
+        path: 'detail-car',
         loadChildren: function loadChildren() {
           return Promise.all(
-          /*! import() | tab2-tab2-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("tab2-tab2-module")]).then(__webpack_require__.bind(null,
-          /*! ../tab2/tab2.module */
-          "./src/app/tab2/tab2.module.ts")).then(function (m) {
-            return m.Tab2PageModule;
+          /*! import() | pages-detail-car-detail-car-module */
+          [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
+          /*! ../pages/detail-car/detail-car.module */
+          "./src/app/pages/detail-car/detail-car.module.ts")).then(function (m) {
+            return m.DetailCarPageModule;
           });
         }
       }, {
-        path: 'tab3',
+        path: 'detail-car/:id',
         loadChildren: function loadChildren() {
           return Promise.all(
-          /*! import() | tab3-tab3-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("tab3-tab3-module")]).then(__webpack_require__.bind(null,
-          /*! ../tab3/tab3.module */
-          "./src/app/tab3/tab3.module.ts")).then(function (m) {
-            return m.Tab3PageModule;
+          /*! import() | pages-detail-car-detail-car-module */
+          [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
+          /*! ../pages/detail-car/detail-car.module */
+          "./src/app/pages/detail-car/detail-car.module.ts")).then(function (m) {
+            return m.DetailCarPageModule;
+          });
+        }
+      }, {
+        path: 'maintenances',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-maintenances-maintenances-module */
+          "pages-maintenances-maintenances-module").then(__webpack_require__.bind(null,
+          /*! ../pages/maintenances/maintenances.module */
+          "./src/app/pages/maintenances/maintenances.module.ts")).then(function (m) {
+            return m.MaintenancesPageModule;
+          });
+        }
+      }, {
+        path: 'detail-maintenance',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-detail-maintenance-detail-maintenance-module */
+          "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null,
+          /*! ../pages/detail-maintenance/detail-maintenance.module */
+          "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(function (m) {
+            return m.DetailMaintenancePageModule;
+          });
+        }
+      }, {
+        path: 'detail-maintenance/:id',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-detail-maintenance-detail-maintenance-module */
+          "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null,
+          /*! ../pages/detail-maintenance/detail-maintenance.module */
+          "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(function (m) {
+            return m.DetailMaintenancePageModule;
+          });
+        }
+      }, {
+        path: 'workshops',
+        loadChildren: function loadChildren() {
+          return Promise.all(
+          /*! import() | pages-workshops-workshops-module */
+          [__webpack_require__.e("common"), __webpack_require__.e("pages-workshops-workshops-module")]).then(__webpack_require__.bind(null,
+          /*! ../pages/workshops/workshops.module */
+          "./src/app/pages/workshops/workshops.module.ts")).then(function (m) {
+            return m.WorkshopsPageModule;
+          });
+        }
+      }, {
+        path: 'detail-workshop',
+        loadChildren: function loadChildren() {
+          return Promise.all(
+          /*! import() | pages-detail-workshop-detail-workshop-module */
+          [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
+          /*! ../pages/detail-workshop/detail-workshop.module */
+          "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(function (m) {
+            return m.DetailWorkshopPageModule;
+          });
+        }
+      }, {
+        path: 'detail-workshop/:id',
+        loadChildren: function loadChildren() {
+          return Promise.all(
+          /*! import() | pages-detail-workshop-detail-workshop-module */
+          [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
+          /*! ../pages/detail-workshop/detail-workshop.module */
+          "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(function (m) {
+            return m.DetailWorkshopPageModule;
+          });
+        }
+      }, {
+        path: 'expenses',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-expenses-expenses-module */
+          "pages-expenses-expenses-module").then(__webpack_require__.bind(null,
+          /*! ../pages/expenses/expenses.module */
+          "./src/app/pages/expenses/expenses.module.ts")).then(function (m) {
+            return m.ExpensesPageModule;
+          });
+        }
+      }, {
+        path: 'detail-expense',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-detail-expense-detail-expense-module */
+          "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null,
+          /*! ../pages/detail-expense/detail-expense.module */
+          "./src/app/pages/detail-expense/detail-expense.module.ts")).then(function (m) {
+            return m.DetailExpensePageModule;
+          });
+        }
+      }, {
+        path: 'detail-expense/:id',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-detail-expense-detail-expense-module */
+          "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null,
+          /*! ../pages/detail-expense/detail-expense.module */
+          "./src/app/pages/detail-expense/detail-expense.module.ts")).then(function (m) {
+            return m.DetailExpensePageModule;
+          });
+        }
+      }, {
+        path: 'user',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-user-user-module */
+          "pages-user-user-module").then(__webpack_require__.bind(null,
+          /*! ../pages/user/user.module */
+          "./src/app/pages/user/user.module.ts")).then(function (m) {
+            return m.UserPageModule;
+          });
+        }
+      }, {
+        path: 'detail-user',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-detail-user-detail-user-module */
+          "pages-detail-user-detail-user-module").then(__webpack_require__.bind(null,
+          /*! ../pages/detail-user/detail-user.module */
+          "./src/app/pages/detail-user/detail-user.module.ts")).then(function (m) {
+            return m.DetailUserPageModule;
+          });
+        }
+      }, {
+        path: 'detail-user/:id',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-detail-user-detail-user-module */
+          "pages-detail-user-detail-user-module").then(__webpack_require__.bind(null,
+          /*! ../pages/detail-user/detail-user.module */
+          "./src/app/pages/detail-user/detail-user.module.ts")).then(function (m) {
+            return m.DetailUserPageModule;
           });
         }
       }, {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/cars',
         pathMatch: 'full'
       }]
     }, {
       path: '',
-      redirectTo: '/tabs/tab1',
+      redirectTo: 'tabs/cars',
+      pathMatch: 'full'
+    }, {
+      path: 'home',
+      redirectTo: '/tabs/home',
+      pathMatch: 'full'
+    }, {
+      path: 'cars',
+      redirectTo: '/tabs/cars',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-car',
+      redirectTo: '/tabs/detail-car',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-car/:id',
+      redirectTo: '/tabs/detail-car/:id',
+      pathMatch: 'full'
+    }, {
+      path: 'workshops',
+      redirectTo: '/tabs/workshops',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-workshop',
+      redirectTo: '/tabs/detail-workshop',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-workshop/:id',
+      redirectTo: '/tabs/detail-workshop/:id',
+      pathMatch: 'full'
+    }, {
+      path: 'maintenances',
+      redirectTo: '/tabs/maintenances',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-maintenance',
+      redirectTo: '/tabs/detail-maintenance',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-maintenance/:id',
+      redirectTo: '/tabs/detail-maintenance/:id',
+      pathMatch: 'full'
+    }, {
+      path: 'expenses',
+      redirectTo: '/tabs/expenses',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-expense',
+      redirectTo: '/tabs/detail-expense',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-expense/:id',
+      redirectTo: '/tabs/detail-expense/:id',
+      pathMatch: 'full'
+    }, {
+      path: 'user',
+      redirectTo: '/tabs/user',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-user',
+      redirectTo: '/tabs/detail-user',
+      pathMatch: 'full'
+    }, {
+      path: 'detail-user/:id',
+      redirectTo: '/tabs/detail-user/:id',
       pathMatch: 'full'
     }];
 
