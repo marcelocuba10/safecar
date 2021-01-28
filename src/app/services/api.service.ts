@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Cars } from '../models/cars';
 import { Observable, throwError } from "rxjs";
-import { map, retry, catchError } from 'rxjs/operators';
+import { retry, catchError } from 'rxjs/operators';
 import { Workshop } from '../models/workshop';
 
 @Injectable({
@@ -10,12 +10,11 @@ import { Workshop } from '../models/workshop';
 })
 export class ApiService {
 
-  //private readonly url = 'http://localhost:3000/';
-  private readonly url = "https://safecarbot.com/api/";
+  private readonly base_path = 'http://localhost:3000/';
+  //private readonly base_path = "https://safecarbot.com/api/";
 
   urldb = "http://www.omdbapi.com";
   apikey = "efcc451b";
-  id = "tt0944947";
 
   constructor(public http: HttpClient) { }
 
@@ -39,6 +38,7 @@ export class ApiService {
       'Something bad happened; please try again later.');
   };
 
+  /*
   searchData(title: string): Observable<any> {
     return this.http.get(this.urldb + `?t=${title}&apikey=${this.apikey}`).pipe(
       map(results => {
@@ -48,41 +48,50 @@ export class ApiService {
     );
   }
 
-  // getCarById3(id: number) {
-  //   return this.http.get(this.url + `?id=${id}&apikey=${this.apikey}`);
-  // }
+  getCarByIdKey(id: number) {
+    return this.http.get(this.url + `?id=${id}&apikey=${this.apikey}`);
+  }
+  */
+
+  //cars
 
   public getCars(): Observable<Cars> {
-    return this.http.get<Cars>(this.url + 'cars').pipe(
+    return this.http.get<Cars>(this.base_path + 'cars').pipe(
       retry(2),
       catchError(this.handleError)
     );
   }
 
-  // Create a new item
-  createItem(data): Observable<Cars> {
+  public getCarById(id): Observable<Cars> {
     return this.http
-      .post<Cars>(this.url + 'cars', JSON.stringify(data), this.httpOptions)
+      .get<Cars>(this.base_path + 'cars/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  // Update item by id
-  updateItem(id, data): Observable<Cars> {
+  public createCar(data): Observable<Cars> {
     return this.http
-      .put<Cars>(this.url + 'cars/' + id, JSON.stringify(data), this.httpOptions)
+      .post<Cars>(this.base_path + 'cars', JSON.stringify(data), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  // Get single student data by ID
-  getItem(id): Observable<Cars> {
+  public updateCar(id, data): Observable<Cars> {
     return this.http
-      .get<Cars>(this.url + 'cars/' + id)
+      .put<Cars>(this.base_path + 'cars/' + id, JSON.stringify(data), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  public deleteCar(id) {
+    return this.http
+      .delete<Cars>(this.base_path + '/' + id, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -90,20 +99,66 @@ export class ApiService {
   }
 
   //workshops
-  public getWorkshop(id): Observable<Workshop> {
+
+  public getWorkshops(): Observable<Workshop> {
+    return this.http.get<Workshop>(this.base_path + 'workshops').pipe(
+      retry(2),
+      catchError(this.handleError)
+    );
+  }
+
+  public getWorkshopById(id): Observable<Workshop> {
     return this.http
-      .get<Workshop>(this.url + 'workshops/' + id)
+      .get<Workshop>(this.base_path + 'workshops/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  public getWorkshops(): Observable<Workshop> {
-    return this.http.get<Workshop>(this.url + 'workshops').pipe(
+  //expenses
+
+  public getExpenses(): Observable<Cars> {
+    return this.http.get<Cars>(this.base_path + 'expenses').pipe(
       retry(2),
       catchError(this.handleError)
     );
+  }
+
+  public getExpenseById(id): Observable<Cars> {
+    return this.http
+      .get<Cars>(this.base_path + 'expenses/' + id)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  public createExpense(data): Observable<Cars> {
+    return this.http
+      .post<Cars>(this.base_path + 'expenses', JSON.stringify(data), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  public updateExpense(id, data): Observable<Cars> {
+    return this.http
+      .put<Cars>(this.base_path + 'expenses/' + id, JSON.stringify(data), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  public deleteExpense(id) {
+    return this.http
+      .delete<Cars>(this.base_path + '/' + id, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
   }
 
 }

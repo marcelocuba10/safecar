@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Manutencoes</ion-title>
+    <ion-title class="ion-text-center">Manutenções</ion-title>
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/detail-workshop']">
         <ion-icon name="add-outline"></ion-icon>
@@ -14,35 +14,34 @@
 
 <ion-content>
 
-    <ion-card>
-      <ion-item>
-    <ion-thumbnail slot="start">
-      <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="build-outline"></ion-icon>
-    </ion-thumbnail>
-    <ion-label>
-      <h3>Compra de Pneus</h3>
-      <p>Comercial Continental</p>
-      <p>600,00 RS</p>
-    </ion-label>
-  </ion-item>
-      </ion-card>
-  <!--  <ion-item *ngFor="let workshop of workshops" [routerLink]="['/detail-workshop/', workshop.id]">-->
-
-<ion-card>
-  <ion-item>
-    <ion-thumbnail slot="start">
-      <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="build-outline"></ion-icon>
-    </ion-thumbnail>
-    <ion-label>
-      <h3>Chaperia Pintura</h3>
-      <p>Comercial San jose</p>
-      <p>1,200,00 RS</p>
-    </ion-label>
-  </ion-item>
- </ion-card> 
-
+  <ion-card>
+    <ion-item class="line-card">
+      <ion-thumbnail slot="start">
+        <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="build-outline"></ion-icon>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>Compra de Pneus</h3>
+        <p>Comercial Continental</p>
+        <p>600,00 RS</p>
+      </ion-label>
+      <ion-note color="primary" style="font-size: small;" slot="end" *ngIf="data">{{ data }}</ion-note>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item class="line-card">
+      <ion-thumbnail slot="start">
+        <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="build-outline"></ion-icon>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>Chaperia Pintura</h3>
+        <p>Comercial San jose</p>
+        <p>1,200,00 RS</p>
+      </ion-label>
+      <ion-note color="primary" style="font-size: small;" slot="end" *ngIf="data">{{ data }}</ion-note>
+    </ion-item>
+  </ion-card> 
  <ion-card>
-  <ion-item>
+  <ion-item class="line-card">
     <ion-thumbnail slot="start">
       <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="build-outline"></ion-icon>
     </ion-thumbnail>
@@ -51,6 +50,7 @@
       <p>Comercial San jose</p>
       <p>1,200,00 RS</p>
     </ion-label>
+    <ion-note color="primary" style="font-size: small;" slot="end" *ngIf="data">{{ data }}</ion-note>
   </ion-item>
  </ion-card> 
 

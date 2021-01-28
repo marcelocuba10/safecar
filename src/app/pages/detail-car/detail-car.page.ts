@@ -14,7 +14,8 @@ export class DetailCarPage implements OnInit {
   private id: any;
   private car = {} as Cars;
   private loading: any;
-  public years=this.appService.getYears();
+  public years = this.appService.getYears();
+  public token: number;
 
   constructor(
     private actRoute: ActivatedRoute,
@@ -24,7 +25,6 @@ export class DetailCarPage implements OnInit {
     private loadingCtrl: LoadingController,
   ) {
     this.id = this.actRoute.snapshot.paramMap.get("id");
-    console.log(this.id);
   }
 
   ngOnInit() {
@@ -34,7 +34,7 @@ export class DetailCarPage implements OnInit {
   }
 
   getCarById() {
-    this.apiService.getItem(this.id).
+    this.apiService.getCarById(this.id).
       subscribe(response => {
         console.log("page", response);
         this.car = response;
@@ -47,13 +47,12 @@ export class DetailCarPage implements OnInit {
       await this.presentLoading();
 
       if (this.id) {
-        //update car
         console.log(this.id);
         console.log(this.car);
         try {
-          await this.apiService.updateItem(this.id, this.car).subscribe(response => {
+          await this.apiService.updateCar(this.id, this.car).subscribe(response => {
             this.loading.dismiss();
-            this.appService.presentToast("Veiculo procesado con exito!")
+            this.appService.presentToast("Veiculo processado com exito!")
             this.navCtrl.navigateRoot("/cars");
           })
         } catch (error) {
@@ -62,15 +61,15 @@ export class DetailCarPage implements OnInit {
         }
 
       } else {
-        //create car
         try {
           console.log(data);
-          this.apiService.createItem(data).subscribe((response) => {
+          this.apiService.createCar(data).subscribe((response) => {
+            console.log('response:', response);
             this.navCtrl.navigateRoot("/cars");
           });
 
           this.loading.dismiss();
-          this.appService.presentToast("Veiculo procesado con exito!")
+          this.appService.presentToast("Veiculo processado com exito!")
           this.navCtrl.navigateRoot("/cars");
 
         } catch (error) {
@@ -80,6 +79,13 @@ export class DetailCarPage implements OnInit {
         }
       }
     }
+  }
+
+  async presentLoading() {
+
+    this.loading = await this.loadingCtrl.create({ message: "Espere.." });
+    return this.loading.present();
+
   }
 
   async formValidation() {
@@ -101,7 +107,7 @@ export class DetailCarPage implements OnInit {
       return false;
     }
     if (!this.car.km) {
-      this.appService.presentAlert("Insira o km");
+      this.appService.presentAlert("Insira o quilometragem");
       return false;
     }
     if (!this.car.placa) {
@@ -133,13 +139,6 @@ export class DetailCarPage implements OnInit {
       return false;
     }
     return true;
-
-  }
-
-  async presentLoading() {
-
-    this.loading = await this.loadingCtrl.create({ message: "Espere.." });
-    return this.loading.present();
 
   }
 

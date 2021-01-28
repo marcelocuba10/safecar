@@ -1,11 +1,11 @@
 
-<ion-item (click)="toggleAccordion()" class="ion-padding-top">
+<ion-item mode="ios" (click)="toggleAccordion()" class="ion-padding-top">
       <ion-thumbnail slot="start">
         <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="car-sport-outline"></ion-icon>
       </ion-thumbnail>
   <ion-label>{{ nome }}</ion-label>
-  <ion-icon slot="end" *ngIf="isMenuOpen" name="chevron-down-outline"></ion-icon>
-  <ion-icon slot="end" *ngIf="!isMenuOpen" name="chevron-forward-outline"></ion-icon>
+  <ion-icon slot="end" color="primary" *ngIf="isMenuOpen" name="chevron-down-outline"></ion-icon>
+  <ion-icon slot="end" color="primary" *ngIf="!isMenuOpen" name="chevron-forward-outline"></ion-icon>
 </ion-item>
 
 <ion-card [ngClass]="this.isMenuOpen ? 'active' : 'inactive'">
@@ -16,8 +16,8 @@
     <ion-card-subtitle><b>Telefone:</b> {{telefone}}</ion-card-subtitle>
     <ion-card-subtitle><b>Email:</b> {{email}}</ion-card-subtitle>
   </ion-card-header>
-  <ion-item>
-      <ion-button (click)="broadcastName(endereco)" fill="outline" color="success" slot="end">Abrir Maps<ion-icon name="location-outline"></ion-icon></ion-button>
-      <ion-button (click)="broadcastName(telefone)" fill="outline" color="warning" slot="end">Chamar<ion-icon name="call-outline"></ion-icon></ion-button>
+  <ion-item class="line-card">
+      <ion-button (click)="broadcastName(telefone)" mode="ios" fill="outline" color="warning" slot="end"><ion-icon name="call-outline"></ion-icon>Chamar</ion-button>
+      <ion-button (click)="broadcastName(endereco)" mode="ios" fill="outline" color="success" slot="end"><ion-icon name="location-outline"></ion-icon>Abrir Maps</ion-button>
   </ion-item>
 </ion-card>

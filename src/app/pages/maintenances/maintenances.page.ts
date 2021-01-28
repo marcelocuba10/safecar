@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaintenancesPage implements OnInit {
 
+  public data:string="18/02/2021";
   constructor() { }
 
   ngOnInit() {
