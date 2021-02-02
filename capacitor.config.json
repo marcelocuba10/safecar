@@ -1,5 +1,5 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "com.app.safecar",
   "appName": "SafeCar",
   "bundledWebRuntime": false,
   "npmClient": "npm",
