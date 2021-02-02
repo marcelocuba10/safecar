@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-expenses',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpensesPage implements OnInit {
 
-  constructor() { }
+  private expenses: any;
+
+  constructor(
+    public apiService: ApiService
+  ) { }
 
   ngOnInit() {
+    this.apiService.getExpenses().subscribe(response => {
+      this.expenses = response;
+      console.log(this.expenses);
+    });
   }
 
 }

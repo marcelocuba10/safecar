@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title class="ion-text-center">Manutenções</ion-title>
     <ion-buttons slot="end">
-      <ion-button [routerLink]="['/detail-workshop']">
+      <ion-button [routerLink]="['/detail-maintenance']">
         <ion-icon name="add-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -14,44 +14,22 @@
 
 <ion-content>
 
-  <ion-card>
+  <ion-card *ngFor="let maintenance of maintenances" [routerLink]="['/detail-maintenance/', maintenance.id]">
     <ion-item class="line-card">
       <ion-thumbnail slot="start">
         <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="build-outline"></ion-icon>
       </ion-thumbnail>
       <ion-label>
-        <h3>Compra de Pneus</h3>
-        <p>Comercial Continental</p>
-        <p>600,00 RS</p>
+        <h2 class="ion-text-capitalize">{{maintenance.manutencao}}</h2>
+        <p class="ion-text-capitalize">{{maintenance.mecanica}}</p>
+        <p>{{maintenance.custo | currency :"R$ "}}</p>
+        <p>{{maintenance.data}}</p>
       </ion-label>
-      <ion-note color="primary" style="font-size: small;" slot="end" *ngIf="data">{{ data }}</ion-note>
+      <ion-note style="font-size: smaller;" slot="end">
+        <p style="color:#008000;"><ion-icon name="speedometer-outline"></ion-icon> {{maintenance.km}} Km</p>
+        <p style="color:#ff4500;"><ion-icon name="speedometer-outline"></ion-icon> {{maintenance.km_prox}} Km</p>
+      </ion-note>
     </ion-item>
   </ion-card>
-  <ion-card>
-    <ion-item class="line-card">
-      <ion-thumbnail slot="start">
-        <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="build-outline"></ion-icon>
-      </ion-thumbnail>
-      <ion-label>
-        <h3>Chaperia Pintura</h3>
-        <p>Comercial San jose</p>
-        <p>1,200,00 RS</p>
-      </ion-label>
-      <ion-note color="primary" style="font-size: small;" slot="end" *ngIf="data">{{ data }}</ion-note>
-    </ion-item>
-  </ion-card> 
- <ion-card>
-  <ion-item class="line-card">
-    <ion-thumbnail slot="start">
-      <ion-icon style="display: table-footer-group;color: cornflowerblue;" name="build-outline"></ion-icon>
-    </ion-thumbnail>
-    <ion-label>
-      <h3>Chaperia Pintura</h3>
-      <p>Comercial San jose</p>
-      <p>1,200,00 RS</p>
-    </ion-label>
-    <ion-note color="primary" style="font-size: small;" slot="end" *ngIf="data">{{ data }}</ion-note>
-  </ion-item>
- </ion-card> 
 
 </ion-content>

@@ -144,7 +144,7 @@ let DetailWorkshopPage = class DetailWorkshopPage {
         }
     }
     getWorkshopById() {
-        this.apiService.getWorkshop(this.id).
+        this.apiService.getWorkshopById(this.id).
             subscribe(response => {
             console.log("page", response);
             this.workshop = response;

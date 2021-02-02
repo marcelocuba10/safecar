@@ -33,7 +33,7 @@
     "cordova-plugin-file-opener2": "^3.0.5",
     "firebase": "^7.18.0",
     "jquery": "^3.5.1",
-    "moment": "^2.27.0",
+    "moment": "^2.29.1",
     "pdfmake": "^0.1.68",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",

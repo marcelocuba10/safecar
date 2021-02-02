@@ -716,12 +716,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       function ApiService(http) {
         _classCallCheck(this, ApiService);
 
-        this.http = http; //private readonly url = 'http://localhost:3000/';
+        this.http = http; //private readonly base_path = 'http://localhost:3000/';
 
-        this.url = "https://safecarbot.com/api/";
+        this.base_path = "https://safecarbot.com/api/";
         this.urldb = "http://www.omdbapi.com";
-        this.apikey = "efcc451b";
-        this.id = "tt0944947"; // Http Options
+        this.apikey = "efcc451b"; // Http Options
 
         this.httpOptions = {
           headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
@@ -743,49 +742,81 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])('Something bad happened; please try again later.');
         }
       }, {
-        key: "searchData",
-        value: function searchData(title) {
-          return this.http.get(this.urldb + "?t=".concat(title, "&apikey=").concat(this.apikey)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (results) {
-            console.log('result:', results);
-            results['Search'];
-          }));
-        } // getCarById3(id: number) {
-        //   return this.http.get(this.url + `?id=${id}&apikey=${this.apikey}`);
-        // }
-
-      }, {
         key: "getCars",
+
+        /*
+        searchData(title: string): Observable<any> {
+          return this.http.get(this.urldb + `?t=${title}&apikey=${this.apikey}`).pipe(
+            map(results => {
+              console.log('result:', results);
+              results['Search'];
+            })
+          );
+        }
+            getCarByIdKey(id: number) {
+          return this.http.get(this.url + `?id=${id}&apikey=${this.apikey}`);
+        }
+        */
+        //cars
         value: function getCars() {
-          return this.http.get(this.url + 'cars').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        } // Create a new item
-
+          return this.http.get(this.base_path + 'cars').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
       }, {
-        key: "createItem",
-        value: function createItem(data) {
-          return this.http.post(this.url + 'cars', JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        } // Update item by id
-
+        key: "getCarById",
+        value: function getCarById(id) {
+          return this.http.get(this.base_path + 'cars/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
       }, {
-        key: "updateItem",
-        value: function updateItem(id, data) {
-          return this.http.put(this.url + 'cars/' + id, JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        } // Get single student data by ID
-
+        key: "createCar",
+        value: function createCar(data) {
+          return this.http.post(this.base_path + 'cars', JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
       }, {
-        key: "getItem",
-        value: function getItem(id) {
-          return this.http.get(this.url + 'cars/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        key: "updateCar",
+        value: function updateCar(id, data) {
+          return this.http.put(this.base_path + 'cars/' + id, JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "deleteCar",
+        value: function deleteCar(id) {
+          return this.http["delete"](this.base_path + '/' + id, this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
         } //workshops
 
       }, {
-        key: "getWorkshop",
-        value: function getWorkshop(id) {
-          return this.http.get(this.url + 'workshops/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        }
-      }, {
         key: "getWorkshops",
         value: function getWorkshops() {
-          return this.http.get(this.url + 'workshops').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+          return this.http.get(this.base_path + 'workshops').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "getWorkshopById",
+        value: function getWorkshopById(id) {
+          return this.http.get(this.base_path + 'workshops/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        } //expenses
+
+      }, {
+        key: "getExpenses",
+        value: function getExpenses() {
+          return this.http.get(this.base_path + 'expenses').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "getExpenseById",
+        value: function getExpenseById(id) {
+          return this.http.get(this.base_path + 'expenses/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "createExpense",
+        value: function createExpense(data) {
+          return this.http.post(this.base_path + 'expenses', JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "updateExpense",
+        value: function updateExpense(id, data) {
+          return this.http.put(this.base_path + 'expenses/' + id, JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "deleteExpense",
+        value: function deleteExpense(id) {
+          return this.http["delete"](this.base_path + '/' + id, this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
         }
       }]);
 

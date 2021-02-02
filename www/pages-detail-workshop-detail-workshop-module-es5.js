@@ -260,7 +260,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getWorkshopById() {
           var _this = this;
 
-          this.apiService.getWorkshop(this.id).subscribe(function (response) {
+          this.apiService.getWorkshopById(this.id).subscribe(function (response) {
             console.log("page", response);
             _this.workshop = response;
           });

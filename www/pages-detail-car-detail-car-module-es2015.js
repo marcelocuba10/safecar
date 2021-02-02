@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n\n  <ion-toolbar color=\"tertiary\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"/cars\"></ion-back-button>\n    </ion-buttons>\n    <ion-title class=\"ion-text-center\" *ngIf=\"id\">Detalhes do Veiculo</ion-title>\n    <ion-title class=\"ion-text-center\" *ngIf=\"!id\">Adicionar Novo Veiculo</ion-title>\n    <ion-buttons slot=\"primary\">\n      <ion-button>\n        <ion-icon name=\"ellipsis-vertical-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n    <ion-card-content>\n      <center>\n        <img style=\"width:70%\" src=\"https://cdn.revendamais.com.br/FC/5358/2790454_0_M_fdc3a39cc0.jpg\" />\n      </center>\n      <ion-item>\n        <ion-label position=\"stacked\">Nome</ion-label>\n        <ion-input type=\"text\" autofocus required [(ngModel)]=\"car.nome\"></ion-input>\n      </ion-item>\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Quilometragem</ion-label>\n              <ion-input type=\"text\" required [(ngModel)]=\"car.km\"></ion-input>\n            </ion-item>\n          </ion-col>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Marca</ion-label>\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.marca\">\n                <ion-select-option value=\"Audi\">Audi</ion-select-option>\n                <ion-select-option value=\"BMW\">BMW</ion-select-option>\n                <ion-select-option value=\"Toyota\">Toyota</ion-select-option>\n                <ion-select-option value=\"Nissan\">Nissan</ion-select-option>\n                <ion-select-option value=\"Wolkswagen\">Wolkswagen</ion-select-option>\n                <ion-select-option value=\"Ford\">Ford</ion-select-option>\n                <ion-select-option value=\"Fiat\">Fiat</ion-select-option>\n              </ion-select>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid> \n      <ion-item>\n        <ion-label position=\"stacked\">Modelo</ion-label>\n        <ion-input type=\"text\" required [(ngModel)]=\"car.modelo\"></ion-input>\n      </ion-item>\n      <ion-grid> \n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Cambio</ion-label>\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.cambio\">\n                <ion-select-option value=\"Automatico\">Automatico</ion-select-option>\n                <ion-select-option value=\"Manual\">Manual</ion-select-option>\n                <ion-select-option value=\"Secuencial\">Secuencial</ion-select-option>\n              </ion-select>\n            </ion-item>\n          </ion-col>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Anho de Fabricacao</ion-label>\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.anho_fabricacao\" ok-text=\"Aceptar\" cancel-text=\"Cancelar\">\n                <ion-select-option *ngFor=\"let year of years\" [value]=\"year\">{{year}}</ion-select-option>\n              </ion-select>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Placa</ion-label>\n              <ion-input type=\"text\" required [(ngModel)]=\"car.placa\"></ion-input>\n            </ion-item>\n          </ion-col>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Cor</ion-label>\n              <ion-input type=\"text\" required [(ngModel)]=\"car.cor\"></ion-input>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Carroceria</ion-label>\n              <ion-input type=\"text\" required [(ngModel)]=\"car.carroceria\"></ion-input>\n            </ion-item>\n          </ion-col>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Portas</ion-label>\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.portas\">\n                <ion-select-option value=\"2\">2</ion-select-option>\n                <ion-select-option value=\"4\">4</ion-select-option>\n                <ion-select-option value=\"6\">6</ion-select-option>\n              </ion-select>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Motorizacao</ion-label>\n              <ion-input type=\"text\" required [(ngModel)]=\"car.motorizacao\"></ion-input>\n            </ion-item>\n          </ion-col>\n          <ion-col>\n            <ion-item>\n              <ion-label position=\"stacked\">Combustivel</ion-label>\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.combustivel\">\n                <ion-select-option value=\"Gasolina\">Gasolina</ion-select-option>\n                <ion-select-option value=\"Diesel\">Diesel</ion-select-option>\n                <ion-select-option value=\"Alcool\">Alcool</ion-select-option>\n                <ion-select-option value=\"Flex\">Flex</ion-select-option>\n                <ion-select-option value=\"Eletrico\">Elétrico</ion-select-option>\n                <ion-select-option value=\"Gnv\">Gnv</ion-select-option>\n              </ion-select>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n      <ion-item>\n        <ion-label position=\"stacked\">Chassi</ion-label>\n        <ion-input type=\"text\" required [(ngModel)]=\"car.chassi\"></ion-input>\n      </ion-item>\n      <ion-item-group class=\"ion-text-center ion-margin-top\">\n        <ion-button color=\"medium\" routerLink=\"/cars\">\n          <ion-icon name=\"arrow-back-outline\"></ion-icon>Voltar\n        </ion-button>\n        <ion-button color=\"success\" (click)=\"savedata(car)\">\n          <ion-icon class=\"m-icon\" name=\"save-outline\"></ion-icon>Salvar\n        </ion-button>\n      </ion-item-group>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n\r\n  <ion-toolbar color=\"tertiary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button defaultHref=\"/cars\"></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\" *ngIf=\"id\">Detalhes do Veiculo</ion-title>\r\n    <ion-title class=\"ion-text-center\" *ngIf=\"!id\">Adicionar Novo Veiculo</ion-title>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button>\r\n        <ion-icon name=\"ellipsis-vertical-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <center>\r\n        <img style=\"width:70%\" src=\"../../../assets/img/no-image.png\" />\r\n      </center>\r\n      <ion-segment mode=\"ios\" value=\"all\" style=\"margin-bottom: 16px;\">\r\n        <ion-segment-button value=\"all\">\r\n          Detalhes\r\n        </ion-segment-button>\r\n        <ion-segment-button value=\"favorites\">\r\n          Fotos\r\n        </ion-segment-button>\r\n      </ion-segment>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Nome</ion-label>\r\n        <ion-input type=\"text\" autofocus required [(ngModel)]=\"car.nome\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Modelo</ion-label>\r\n        <ion-input type=\"text\" required [(ngModel)]=\"car.modelo\"></ion-input>\r\n      </ion-item>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Quilometragem</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.km\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Placa</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.placa\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid> \r\n      <ion-grid> \r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Cambio</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.cambio\">\r\n                <ion-select-option value=\"Automatico\">Automático</ion-select-option>\r\n                <ion-select-option value=\"Manual\">Manual</ion-select-option>\r\n                <ion-select-option value=\"Secuencial\">Sequencial</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Anho de Fabricação</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.anho_fabricacao\" ok-text=\"Aceptar\" cancel-text=\"Cancelar\">\r\n                <ion-select-option *ngFor=\"let year of years\" [value]=\"year\">{{year}}</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Marca</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.marca\">\r\n                <ion-select-option value=\"Audi\">Audi</ion-select-option>\r\n                <ion-select-option value=\"BMW\">BMW</ion-select-option>\r\n                <ion-select-option value=\"Toyota\">Toyota</ion-select-option>\r\n                <ion-select-option value=\"Nissan\">Nissan</ion-select-option>\r\n                <ion-select-option value=\"Wolkswagen\">Wolkswagen</ion-select-option>\r\n                <ion-select-option value=\"Ford\">Ford</ion-select-option>\r\n                <ion-select-option value=\"Fiat\">Fiat</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n              <ion-item>\r\n                <ion-label position=\"stacked\">(*)Cor</ion-label>\r\n                <ion-select interface=\"popover\" required [(ngModel)]=\"car.cor\">\r\n                  <ion-select-option value=\"Amarelo\">Amarelo</ion-select-option>\r\n                  <ion-select-option value=\"Azul\">Azul</ion-select-option>\r\n                  <ion-select-option value=\"Preto\">Preto</ion-select-option>\r\n                  <ion-select-option value=\"Branco\">Branco</ion-select-option>\r\n                  <ion-select-option value=\"Cinza\">Cinza</ion-select-option>\r\n                  <ion-select-option value=\"Verde\">Verde</ion-select-option>\r\n                  <ion-select-option value=\"Vermelho\">Vermelho</ion-select-option>\r\n                </ion-select>\r\n              </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Carroceria</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.carroceria\">\r\n                <ion-select-option value=\"Hatch\">Hatch</ion-select-option>\r\n                <ion-select-option value=\"Sedan\">Sedan</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Portas</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.portas\">\r\n                <ion-select-option value=\"2\">2</ion-select-option>\r\n                <ion-select-option value=\"3\">3</ion-select-option>\r\n                <ion-select-option value=\"4\">4</ion-select-option>\r\n                <ion-select-option value=\"5\">5</ion-select-option>\r\n                <ion-select-option value=\"6\">6</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Motorização</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.motorizacao\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Combustivel</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.combustivel\">\r\n                <ion-select-option value=\"Gasolina\">Gasolina</ion-select-option>\r\n                <ion-select-option value=\"Diesel\">Diesel</ion-select-option>\r\n                <ion-select-option value=\"Alcool\">Alcool</ion-select-option>\r\n                <ion-select-option value=\"Flex\">Flex</ion-select-option>\r\n                <ion-select-option value=\"Eletrico\">Elétrico</ion-select-option>\r\n                <ion-select-option value=\"Gnv\">Gnv</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Chassi</ion-label>\r\n        <ion-input type=\"text\" required [(ngModel)]=\"car.chassi\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">Observações</ion-label>\r\n        <ion-textarea placeholder=\"...\"></ion-textarea>\r\n      </ion-item>\r\n      <ion-item-group class=\"ion-text-center ion-margin-top\">\r\n        <ion-button mode=\"ios\" color=\"medium\" routerLink=\"/cars\">\r\n          <ion-icon name=\"arrow-back-outline\"></ion-icon>Voltar\r\n        </ion-button>\r\n        <ion-button mode=\"ios\" color=\"success\" (click)=\"savedata(car)\">\r\n          <ion-icon class=\"m-icon\" name=\"save-outline\"></ion-icon>Salvar\r\n        </ion-button>\r\n      </ion-item-group>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n</ion-content>");
 
 /***/ }),
 
@@ -137,7 +137,6 @@ let DetailCarPage = class DetailCarPage {
         this.car = {};
         this.years = this.appService.getYears();
         this.id = this.actRoute.snapshot.paramMap.get("id");
-        console.log(this.id);
     }
     ngOnInit() {
         if (this.id) {
@@ -145,7 +144,7 @@ let DetailCarPage = class DetailCarPage {
         }
     }
     getCarById() {
-        this.apiService.getItem(this.id).
+        this.apiService.getCarById(this.id).
             subscribe(response => {
             console.log("page", response);
             this.car = response;
@@ -156,13 +155,12 @@ let DetailCarPage = class DetailCarPage {
             if (yield this.formValidation()) {
                 yield this.presentLoading();
                 if (this.id) {
-                    //update car
                     console.log(this.id);
                     console.log(this.car);
                     try {
-                        yield this.apiService.updateItem(this.id, this.car).subscribe(response => {
+                        yield this.apiService.updateCar(this.id, this.car).subscribe(response => {
                             this.loading.dismiss();
-                            this.appService.presentToast("Veiculo procesado con exito!");
+                            this.appService.presentToast("Veiculo processado com exito!");
                             this.navCtrl.navigateRoot("/cars");
                         });
                     }
@@ -172,14 +170,14 @@ let DetailCarPage = class DetailCarPage {
                     }
                 }
                 else {
-                    //create car
                     try {
                         console.log(data);
-                        this.apiService.createItem(data).subscribe((response) => {
+                        this.apiService.createCar(data).subscribe((response) => {
+                            console.log('response:', response);
                             this.navCtrl.navigateRoot("/cars");
                         });
                         this.loading.dismiss();
-                        this.appService.presentToast("Veiculo procesado con exito!");
+                        this.appService.presentToast("Veiculo processado com exito!");
                         this.navCtrl.navigateRoot("/cars");
                     }
                     catch (error) {
@@ -189,6 +187,12 @@ let DetailCarPage = class DetailCarPage {
                     }
                 }
             }
+        });
+    }
+    presentLoading() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.loading = yield this.loadingCtrl.create({ message: "Espere.." });
+            return this.loading.present();
         });
     }
     formValidation() {
@@ -210,7 +214,7 @@ let DetailCarPage = class DetailCarPage {
                 return false;
             }
             if (!this.car.km) {
-                this.appService.presentAlert("Insira o km");
+                this.appService.presentAlert("Insira o quilometragem");
                 return false;
             }
             if (!this.car.placa) {
@@ -242,12 +246,6 @@ let DetailCarPage = class DetailCarPage {
                 return false;
             }
             return true;
-        });
-    }
-    presentLoading() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            this.loading = yield this.loadingCtrl.create({ message: "Espere.." });
-            return this.loading.present();
         });
     }
 };

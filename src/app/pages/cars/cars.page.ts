@@ -9,12 +9,13 @@ export class CarsPage implements OnInit {
 
   private cars: any;
 
-  constructor(public apiService: ApiService) { }
+  constructor(
+    public apiService: ApiService
+  ) { }
 
   ngOnInit() {
-    this.apiService.getCars()
-      .subscribe(data => {
-        this.cars = data;
+    this.apiService.getCars().subscribe(response => {
+        this.cars = response;
         console.log(this.cars);
       });
   }

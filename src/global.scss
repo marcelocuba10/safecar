@@ -93,4 +93,15 @@ ion-card{
     --border-color: transparent;
 }
 
+ion-select {
+    /* Applies to the value and placeholder color */
+    color: #000;
+  
+    /* Set a different placeholder color */
+    --placeholder-color: #000;
+  
+    /* Set full opacity on the placeholder */
+    --placeholder-opacity: 1;
+  }
+
 @import "~@mobiscroll/angular/dist/css/mobiscroll.scss";

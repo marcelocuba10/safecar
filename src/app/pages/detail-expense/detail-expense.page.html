@@ -1,9 +1,55 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detail-expense</ion-title>
+
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/expenses"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" *ngIf="id">Detalhes Despesa</ion-title>
+    <ion-title class="ion-text-center" *ngIf="!id">Adicionar Nova Despesa</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">(*)Nome</ion-label>
+        <ion-input type="text" autofocus required [(ngModel)]="expense.nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">(*)Custo</ion-label>
+        <ion-input type="text" required [(ngModel)]="expense.custo"></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="stacked">(*)Data</ion-label>
+        <ion-datetime (ionChange)="onChange($event)" autofocus required [(ngModel)]="expense.data" display-format="DD/MM/YYYY" min="1970-01-01" max="2021-12-31"></ion-datetime>
+      </ion-item>
+      <ion-item class="select-placeholder">
+        <ion-label position="stacked">(*)Veiculo</ion-label>
+        <ion-select interface="popover" required [(ngModel)]="expense.id_veiculo" class="ion-text-capitalize" placeholder="{{car_name}}">
+          <ion-select-option *ngFor="let car of cars" [value]="car.id">{{car.nome}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Observações</ion-label>
+        <ion-textarea [(ngModel)]="expense.observacoes" placeholder="..."></ion-textarea>
+      </ion-item>
+      <ion-item-group class="ion-text-center ion-margin-top">
+        <ion-button mode="ios" color="medium" routerLink="/expenses">
+          <ion-icon name="arrow-back-outline"></ion-icon>Voltar
+        </ion-button>
+        <ion-button mode="ios" color="success" (click)="savedata(expense)">
+          <ion-icon class="m-icon" name="save-outline"></ion-icon>Salvar
+        </ion-button>
+      </ion-item-group>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

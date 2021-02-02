@@ -14,14 +14,12 @@ export class DetailWorkshopPage implements OnInit {
 
   private id: any;
   private workshop = {} as Workshop;
-  private loading: any;
 
   constructor(
     private actRoute: ActivatedRoute,
     public apiService: ApiService,
     private navCtrl: NavController,
-    private appService: AppService,
-    private loadingCtrl: LoadingController,
+    private appService: AppService
   ) { 
     this.id = this.actRoute.snapshot.paramMap.get("id");
     console.log(this.id);
@@ -34,7 +32,7 @@ export class DetailWorkshopPage implements OnInit {
   }
 
   getWorkshopById() {
-    this.apiService.getWorkshop(this.id).
+    this.apiService.getWorkshopById(this.id).
       subscribe(response => {
         console.log("page", response);
         this.workshop = response;

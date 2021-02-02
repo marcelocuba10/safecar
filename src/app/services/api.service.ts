@@ -4,7 +4,8 @@ import { Cars } from '../models/cars';
 import { Observable, throwError } from "rxjs";
 import { retry, catchError } from 'rxjs/operators';
 import { Workshop } from '../models/workshop';
-
+import { Expenses } from '../models/expenses';
+import { Maintenance } from '../models/maintenance';
 @Injectable({
   providedIn: 'root'
 })
@@ -118,34 +119,34 @@ export class ApiService {
 
   //expenses
 
-  public getExpenses(): Observable<Cars> {
-    return this.http.get<Cars>(this.base_path + 'expenses').pipe(
+  public getExpenses(): Observable<Expenses> {
+    return this.http.get<Expenses>(this.base_path + 'expenses').pipe(
       retry(2),
       catchError(this.handleError)
     );
   }
 
-  public getExpenseById(id): Observable<Cars> {
+  public getExpenseById(id): Observable<Expenses> {
     return this.http
-      .get<Cars>(this.base_path + 'expenses/' + id)
+      .get<Expenses>(this.base_path + 'expenses/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  public createExpense(data): Observable<Cars> {
+  public createExpense(data): Observable<Expenses> {
     return this.http
-      .post<Cars>(this.base_path + 'expenses', JSON.stringify(data), this.httpOptions)
+      .post<Expenses>(this.base_path + 'expenses', JSON.stringify(data), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  public updateExpense(id, data): Observable<Cars> {
+  public updateExpense(id, data): Observable<Expenses> {
     return this.http
-      .put<Cars>(this.base_path + 'expenses/' + id, JSON.stringify(data), this.httpOptions)
+      .put<Expenses>(this.base_path + 'expenses/' + id, JSON.stringify(data), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -154,7 +155,52 @@ export class ApiService {
 
   public deleteExpense(id) {
     return this.http
-      .delete<Cars>(this.base_path + '/' + id, this.httpOptions)
+      .delete<Expenses>(this.base_path + '/' + id, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  //Maintenances
+
+  public getMaintenances(): Observable<Maintenance> {
+    return this.http.get<Maintenance>(this.base_path + 'maintenances').pipe(
+      retry(2),
+      catchError(this.handleError)
+    );
+  }
+
+  public getMaintenanceById(id): Observable<Maintenance> {
+    return this.http
+      .get<Maintenance>(this.base_path + 'maintenances/' + id)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  public createMaintenance(data): Observable<Maintenance> {
+    return this.http
+      .post<Maintenance>(this.base_path + 'maintenances', JSON.stringify(data), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  public updateMaintenance(id, data): Observable<Maintenance> {
+    return this.http
+      .put<Maintenance>(this.base_path + 'maintenances/' + id, JSON.stringify(data), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  public deleteMaintenance(id) {
+    return this.http
+      .delete<Maintenance>(this.base_path + '/' + id, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
