@@ -128,12 +128,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let DetailWorkshopPage = class DetailWorkshopPage {
-    constructor(actRoute, apiService, navCtrl, appService, loadingCtrl) {
+    constructor(actRoute, apiService, navCtrl, appService) {
         this.actRoute = actRoute;
         this.apiService = apiService;
         this.navCtrl = navCtrl;
         this.appService = appService;
-        this.loadingCtrl = loadingCtrl;
         this.workshop = {};
         this.id = this.actRoute.snapshot.paramMap.get("id");
         console.log(this.id);
@@ -155,8 +154,7 @@ DetailWorkshopPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"] },
-    { type: src_app_services_app_service__WEBPACK_IMPORTED_MODULE_5__["AppService"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"] }
+    { type: src_app_services_app_service__WEBPACK_IMPORTED_MODULE_5__["AppService"] }
 ];
 DetailWorkshopPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

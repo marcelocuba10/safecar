@@ -5,14 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyBHYXkr-u4sG4l0q-5N_TmzD8qCbHnDI6M",
-    authDomain: "apps-a3e0b.firebaseapp.com",
-    databaseURL: "https://apps-a3e0b.firebaseio.com",
-    projectId: "apps-a3e0b",
-    storageBucket: "apps-a3e0b.appspot.com",
-    messagingSenderId: "714504144769",
-    appId: "1:714504144769:web:73dbd3a62a467752114a80",
-    measurementId: "G-9L7P2KYKTB"
+    apiKey: "AIzaSyCA3oSzrO_Pan-5H9Z1T3N0yYB0POn04zQ",
+    authDomain: "safecar-58c9b.firebaseapp.com",
+    projectId: "safecar-58c9b",
+    storageBucket: "safecar-58c9b.appspot.com",
+    messagingSenderId: "144987845867",
+    appId: "1:144987845867:web:eaeef2775580c58cfc7aae",
+    measurementId: "G-SW2EX284T8"
   }
 };
 

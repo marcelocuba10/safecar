@@ -11,8 +11,8 @@ import { Maintenance } from '../models/maintenance';
 })
 export class ApiService {
 
-  private readonly base_path = 'http://localhost:3000/';
-  //private readonly base_path = "https://safecarbot.com/api/";
+  //private readonly base_path = 'http://localhost:3000/';
+  private readonly base_path = "https://safecarbot.com/api/";
 
   urldb = "http://www.omdbapi.com";
   apikey = "efcc451b";

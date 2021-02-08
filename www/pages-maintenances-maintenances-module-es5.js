@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"tertiary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">Manutenções</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button [routerLink]=\"['/detail-workshop']\">\r\n        <ion-icon name=\"add-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-card>\r\n    <ion-item class=\"line-card\">\r\n      <ion-thumbnail slot=\"start\">\r\n        <ion-icon style=\"display: table-footer-group;color: cornflowerblue;\" name=\"build-outline\"></ion-icon>\r\n      </ion-thumbnail>\r\n      <ion-label>\r\n        <h3>Compra de Pneus</h3>\r\n        <p>Comercial Continental</p>\r\n        <p>600,00 RS</p>\r\n      </ion-label>\r\n      <ion-note color=\"primary\" style=\"font-size: small;\" slot=\"end\" *ngIf=\"data\">{{ data }}</ion-note>\r\n    </ion-item>\r\n  </ion-card>\r\n  <ion-card>\r\n    <ion-item class=\"line-card\">\r\n      <ion-thumbnail slot=\"start\">\r\n        <ion-icon style=\"display: table-footer-group;color: cornflowerblue;\" name=\"build-outline\"></ion-icon>\r\n      </ion-thumbnail>\r\n      <ion-label>\r\n        <h3>Chaperia Pintura</h3>\r\n        <p>Comercial San jose</p>\r\n        <p>1,200,00 RS</p>\r\n      </ion-label>\r\n      <ion-note color=\"primary\" style=\"font-size: small;\" slot=\"end\" *ngIf=\"data\">{{ data }}</ion-note>\r\n    </ion-item>\r\n  </ion-card> \r\n <ion-card>\r\n  <ion-item class=\"line-card\">\r\n    <ion-thumbnail slot=\"start\">\r\n      <ion-icon style=\"display: table-footer-group;color: cornflowerblue;\" name=\"build-outline\"></ion-icon>\r\n    </ion-thumbnail>\r\n    <ion-label>\r\n      <h3>Chaperia Pintura</h3>\r\n      <p>Comercial San jose</p>\r\n      <p>1,200,00 RS</p>\r\n    </ion-label>\r\n    <ion-note color=\"primary\" style=\"font-size: small;\" slot=\"end\" *ngIf=\"data\">{{ data }}</ion-note>\r\n  </ion-item>\r\n </ion-card> \r\n\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"tertiary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\">Manutenções</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button [routerLink]=\"['/detail-maintenance']\">\r\n        <ion-icon name=\"add-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-card *ngFor=\"let maintenance of maintenances\" [routerLink]=\"['/detail-maintenance/', maintenance.id]\">\r\n    <ion-item class=\"line-card\">\r\n      <ion-thumbnail slot=\"start\">\r\n        <ion-icon style=\"display: table-footer-group;color: cornflowerblue;\" name=\"build-outline\"></ion-icon>\r\n      </ion-thumbnail>\r\n      <ion-label>\r\n        <h2 class=\"ion-text-capitalize\">{{maintenance.manutencao}}</h2>\r\n        <p class=\"ion-text-capitalize\">{{maintenance.mecanica}}</p>\r\n        <p>{{maintenance.custo | currency :\"R$ \"}}</p>\r\n        <p>{{maintenance.data}}</p>\r\n      </ion-label>\r\n      <ion-note style=\"font-size: smaller;\" slot=\"end\">\r\n        <p style=\"color:#008000;\"><ion-icon name=\"speedometer-outline\"></ion-icon> {{maintenance.km}} Km</p>\r\n        <p style=\"color:#ff4500;\"><ion-icon name=\"speedometer-outline\"></ion-icon> {{maintenance.km_prox}} Km</p>\r\n      </ion-note>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -209,21 +209,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/services/api.service */
+    "./src/app/services/api.service.ts");
 
     var MaintenancesPage = /*#__PURE__*/function () {
-      function MaintenancesPage() {
+      function MaintenancesPage(apiservice) {
         _classCallCheck(this, MaintenancesPage);
 
-        this.data = "18/02/2021";
+        this.apiservice = apiservice;
       }
 
       _createClass(MaintenancesPage, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          var _this = this;
+
+          this.apiservice.getMaintenances().subscribe(function (response) {
+            _this.maintenances = response;
+            console.log("response:", _this.maintenances);
+          });
+        }
       }]);
 
       return MaintenancesPage;
     }();
+
+    MaintenancesPage.ctorParameters = function () {
+      return [{
+        type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+      }];
+    };
 
     MaintenancesPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-maintenances',
@@ -234,6 +253,205 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /*! ./maintenances.page.scss */
       "./src/app/pages/maintenances/maintenances.page.scss"))["default"]]
     })], MaintenancesPage);
+    /***/
+  },
+
+  /***/
+  "./src/app/services/api.service.ts":
+  /*!*****************************************!*\
+    !*** ./src/app/services/api.service.ts ***!
+    \*****************************************/
+
+  /*! exports provided: ApiService */
+
+  /***/
+  function srcAppServicesApiServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ApiService", function () {
+      return ApiService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var ApiService = /*#__PURE__*/function () {
+      function ApiService(http) {
+        _classCallCheck(this, ApiService);
+
+        this.http = http; //private readonly base_path = 'http://localhost:3000/';
+
+        this.base_path = "https://safecarbot.com/api/";
+        this.urldb = "http://www.omdbapi.com";
+        this.apikey = "efcc451b"; // Http Options
+
+        this.httpOptions = {
+          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+          })
+        };
+      } // Handle API errors
+
+
+      _createClass(ApiService, [{
+        key: "handleError",
+        value: function handleError(error) {
+          if (error.error instanceof ErrorEvent) {
+            console.error('An error occurred:', error.error.message);
+          } else {
+            console.error("Backend returned code ".concat(error.status, ", ") + "body was: ".concat(error.error));
+          }
+
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])('Something bad happened; please try again later.');
+        }
+      }, {
+        key: "getCars",
+
+        /*
+        searchData(title: string): Observable<any> {
+          return this.http.get(this.urldb + `?t=${title}&apikey=${this.apikey}`).pipe(
+            map(results => {
+              console.log('result:', results);
+              results['Search'];
+            })
+          );
+        }
+            getCarByIdKey(id: number) {
+          return this.http.get(this.url + `?id=${id}&apikey=${this.apikey}`);
+        }
+        */
+        //cars
+        value: function getCars() {
+          return this.http.get(this.base_path + 'cars').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "getCarById",
+        value: function getCarById(id) {
+          return this.http.get(this.base_path + 'cars/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "createCar",
+        value: function createCar(data) {
+          return this.http.post(this.base_path + 'cars', JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "updateCar",
+        value: function updateCar(id, data) {
+          return this.http.put(this.base_path + 'cars/' + id, JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "deleteCar",
+        value: function deleteCar(id) {
+          return this.http["delete"](this.base_path + '/' + id, this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        } //workshops
+
+      }, {
+        key: "getWorkshops",
+        value: function getWorkshops() {
+          return this.http.get(this.base_path + 'workshops').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "getWorkshopById",
+        value: function getWorkshopById(id) {
+          return this.http.get(this.base_path + 'workshops/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        } //expenses
+
+      }, {
+        key: "getExpenses",
+        value: function getExpenses() {
+          return this.http.get(this.base_path + 'expenses').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "getExpenseById",
+        value: function getExpenseById(id) {
+          return this.http.get(this.base_path + 'expenses/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "createExpense",
+        value: function createExpense(data) {
+          return this.http.post(this.base_path + 'expenses', JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "updateExpense",
+        value: function updateExpense(id, data) {
+          return this.http.put(this.base_path + 'expenses/' + id, JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "deleteExpense",
+        value: function deleteExpense(id) {
+          return this.http["delete"](this.base_path + '/' + id, this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        } //Maintenances
+
+      }, {
+        key: "getMaintenances",
+        value: function getMaintenances() {
+          return this.http.get(this.base_path + 'maintenances').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "getMaintenanceById",
+        value: function getMaintenanceById(id) {
+          return this.http.get(this.base_path + 'maintenances/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "createMaintenance",
+        value: function createMaintenance(data) {
+          return this.http.post(this.base_path + 'maintenances', JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "updateMaintenance",
+        value: function updateMaintenance(id, data) {
+          return this.http.put(this.base_path + 'maintenances/' + id, JSON.stringify(data), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }, {
+        key: "deleteMaintenance",
+        value: function deleteMaintenance(id) {
+          return this.http["delete"](this.base_path + '/' + id, this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        }
+      }]);
+
+      return ApiService;
+    }();
+
+    ApiService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }];
+    };
+
+    ApiService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], ApiService);
     /***/
   }
 }]);

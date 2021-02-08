@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar>\n    <ion-title>detail-expense</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n";
+    __webpack_exports__["default"] = "<ion-header>\n\n  <ion-toolbar color=\"tertiary\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"/expenses\"></ion-back-button>\n    </ion-buttons>\n    <ion-title class=\"ion-text-center\" *ngIf=\"id\">Detalhes Despesa</ion-title>\n    <ion-title class=\"ion-text-center\" *ngIf=\"!id\">Adicionar Nova Despesa</ion-title>\n    <ion-buttons slot=\"primary\">\n      <ion-button>\n        <ion-icon name=\"ellipsis-vertical-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-card>\n    <ion-card-content>\n      <ion-item>\n        <ion-label position=\"stacked\">(*)Nome</ion-label>\n        <ion-input type=\"text\" autofocus required [(ngModel)]=\"expense.nome\"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label position=\"stacked\">(*)Custo</ion-label>\n        <ion-input type=\"text\" required [(ngModel)]=\"expense.custo\"></ion-input>\n      </ion-item> \n      <ion-item>\n        <ion-label position=\"stacked\">(*)Data</ion-label>\n        <ion-datetime (ionChange)=\"onChange($event)\" autofocus required [(ngModel)]=\"expense.data\" display-format=\"DD/MM/YYYY\" min=\"1970-01-01\" max=\"2021-12-31\"></ion-datetime>\n      </ion-item>\n      <ion-item class=\"select-placeholder\">\n        <ion-label position=\"stacked\">(*)Veiculo</ion-label>\n        <ion-select interface=\"popover\" required [(ngModel)]=\"expense.id_veiculo\" class=\"ion-text-capitalize\" placeholder=\"{{car_name}}\">\n          <ion-select-option *ngFor=\"let car of cars\" [value]=\"car.id\">{{car.nome}}</ion-select-option>\n        </ion-select>\n      </ion-item>\n      <ion-item>\n        <ion-label position=\"stacked\">Observações</ion-label>\n        <ion-textarea [(ngModel)]=\"expense.observacoes\" placeholder=\"...\"></ion-textarea>\n      </ion-item>\n      <ion-item-group class=\"ion-text-center ion-margin-top\">\n        <ion-button mode=\"ios\" color=\"medium\" routerLink=\"/expenses\">\n          <ion-icon name=\"arrow-back-outline\"></ion-icon>Voltar\n        </ion-button>\n        <ion-button mode=\"ios\" color=\"success\" (click)=\"savedata(expense)\">\n          <ion-icon class=\"m-icon\" name=\"save-outline\"></ion-icon>Salvar\n        </ion-button>\n      </ion-item-group>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>";
     /***/
   },
 
@@ -209,19 +209,190 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    /* harmony import */
+
+
+    var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/services/api.service */
+    "./src/app/services/api.service.ts");
+    /* harmony import */
+
+
+    var src_app_services_app_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/services/app.service */
+    "./src/app/services/app.service.ts");
 
     var DetailExpensePage = /*#__PURE__*/function () {
-      function DetailExpensePage() {
+      function DetailExpensePage(actRoute, apiService, navCtrl, appService, loadingCtrl) {
         _classCallCheck(this, DetailExpensePage);
+
+        this.actRoute = actRoute;
+        this.apiService = apiService;
+        this.navCtrl = navCtrl;
+        this.appService = appService;
+        this.loadingCtrl = loadingCtrl;
+        this.expense = {};
+        this.id = this.actRoute.snapshot.paramMap.get("id");
       }
 
       _createClass(DetailExpensePage, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          if (this.id) {
+            this.getExpenseById();
+          }
+
+          this.getCars();
+        }
+      }, {
+        key: "onChange",
+        value: function onChange($event) {
+          this.dateFormat = this.appService.getDate($event);
+          console.log(this.dateFormat);
+        }
+      }, {
+        key: "getExpenseById",
+        value: function getExpenseById() {
+          var _this = this;
+
+          this.apiService.getExpenseById(this.id).subscribe(function (response) {
+            _this.expense = response;
+            console.log("response", _this.expense);
+
+            _this.getCarById();
+          });
+        }
+      }, {
+        key: "getCars",
+        value: function getCars() {
+          var _this2 = this;
+
+          this.apiService.getCars().subscribe(function (response) {
+            _this2.cars = response;
+            console.log("response:", _this2.cars);
+          });
+        }
+      }, {
+        key: "getCarById",
+        value: function getCarById() {
+          var _this3 = this;
+
+          this.apiService.getCarById(this.expense.id_veiculo).subscribe(function (response) {
+            _this3.car_name = response.nome;
+            console.log("response", _this3.car_name);
+          });
+        }
+      }, {
+        key: "savedata",
+        value: function savedata(data) {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var _this4 = this;
+
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return this.appService.formValidation(this.expense);
+
+                  case 2:
+                    if (!_context.sent) {
+                      _context.next = 19;
+                      break;
+                    }
+
+                    _context.next = 5;
+                    return this.appService.presentLoading(1);
+
+                  case 5:
+                    this.expense.data = this.dateFormat;
+
+                    if (!this.id) {
+                      _context.next = 18;
+                      break;
+                    }
+
+                    _context.prev = 7;
+                    _context.next = 10;
+                    return this.apiService.updateExpense(this.id, this.expense).subscribe(function (response) {
+                      console.log('response:', response);
+
+                      _this4.appService.presentLoading(0);
+
+                      _this4.appService.presentToast("Despesa atualizada com exito!");
+
+                      _this4.navCtrl.navigateRoot("/expenses");
+                    });
+
+                  case 10:
+                    _context.next = 16;
+                    break;
+
+                  case 12:
+                    _context.prev = 12;
+                    _context.t0 = _context["catch"](7);
+                    this.appService.presentToast(_context.t0);
+                    this.appService.presentLoading(0);
+
+                  case 16:
+                    _context.next = 19;
+                    break;
+
+                  case 18:
+                    try {
+                      console.log(data);
+                      this.apiService.createExpense(data).subscribe(function (response) {
+                        console.log('response:', response);
+
+                        _this4.navCtrl.navigateRoot("/expenses");
+                      });
+                      this.appService.presentLoading(0);
+                      this.appService.presentToast("Despesa criada com exito!");
+                      this.navCtrl.navigateRoot("/expenses");
+                    } catch (error) {
+                      this.appService.presentToast(error);
+                      this.appService.presentLoading(0);
+                      console.log(error);
+                    }
+
+                  case 19:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this, [[7, 12]]);
+          }));
+        }
       }]);
 
       return DetailExpensePage;
     }();
+
+    DetailExpensePage.ctorParameters = function () {
+      return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
+      }, {
+        type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"]
+      }, {
+        type: src_app_services_app_service__WEBPACK_IMPORTED_MODULE_5__["AppService"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"]
+      }];
+    };
 
     DetailExpensePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-detail-expense',

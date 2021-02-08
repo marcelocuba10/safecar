@@ -175,7 +175,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-app>\r\n    <ion-split-pane contentId=\"menu-content\" when=\"xs\" [disabled]=\"true\"\r\n    (ionSplitPaneVisible)=\"onSplitPaneVisible(event)\">\r\n    <ion-menu contentId=\"menu-content\" menuId=\"menu-content\" side=\"start\" type=\"overlay\">\r\n      <ion-header>\r\n        <ion-toolbar translucent>\r\n          <ion-title>SafeCar</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/tabs']\">\r\n              <ion-icon name=\"home\" slot=\"start\"></ion-icon>\r\n              <ion-label>Inicio</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/workshops']\">\r\n              <ion-icon name=\"location-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Mecanicas</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/cars']\">\r\n              <ion-icon name=\"car-sport-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Veiculos</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/expenses']\">\r\n              <ion-icon name=\"cash-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Despesas</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/maintenances']\">\r\n              <ion-icon name=\"build-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Manutenções</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/user']\">\r\n              <ion-icon name=\"person-circle-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Meu Perfil</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item>\r\n              <ion-icon name=\"log-out-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Sair</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"menu-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
+    __webpack_exports__["default"] = "<ion-app>\r\n    <ion-split-pane contentId=\"menu-content\" when=\"xs\" [disabled]=\"true\"\r\n    (ionSplitPaneVisible)=\"onSplitPaneVisible(event)\">\r\n    <ion-menu mode=\"ios\" contentId=\"menu-content\" menuId=\"menu-content\" side=\"start\" type=\"overlay\">\r\n      <ion-header>\r\n        <ion-toolbar translucent>\r\n          <ion-title>SafeCar</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/tabs']\">\r\n              <ion-icon name=\"home\" slot=\"start\"></ion-icon>\r\n              <ion-label>Inicio</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/workshops']\">\r\n              <ion-icon name=\"location-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Mecanicas</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/cars']\">\r\n              <ion-icon name=\"car-sport-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Veiculos</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/expenses']\">\r\n              <ion-icon name=\"cash-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Despesas</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/maintenances']\">\r\n              <ion-icon name=\"build-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Manutenções</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/user']\">\r\n              <ion-icon name=\"person-circle-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Meu Perfil</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/login']\">\r\n              <ion-icon name=\"log-out-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Sair</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"menu-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n";
     /***/
   },
 
@@ -231,9 +231,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'cars',
       loadChildren: function loadChildren() {
-        return Promise.all(
+        return __webpack_require__.e(
         /*! import() | pages-cars-cars-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("pages-cars-cars-module")]).then(__webpack_require__.bind(null,
+        "pages-cars-cars-module").then(__webpack_require__.bind(null,
         /*! ./pages/cars/cars.module */
         "./src/app/pages/cars/cars.module.ts")).then(function (m) {
           return m.CarsPageModule;
@@ -244,7 +244,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | pages-detail-car-detail-car-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/detail-car/detail-car.module */
         "./src/app/pages/detail-car/detail-car.module.ts")).then(function (m) {
           return m.DetailCarPageModule;
@@ -255,7 +255,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | pages-detail-car-detail-car-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/detail-car/detail-car.module */
         "./src/app/pages/detail-car/detail-car.module.ts")).then(function (m) {
           return m.DetailCarPageModule;
@@ -275,9 +275,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'detail-maintenance',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | pages-detail-maintenance-detail-maintenance-module */
-        "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-maintenance-detail-maintenance-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/detail-maintenance/detail-maintenance.module */
         "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(function (m) {
           return m.DetailMaintenancePageModule;
@@ -286,9 +286,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'detail-maintenance/:id',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | pages-detail-maintenance-detail-maintenance-module */
-        "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-maintenance-detail-maintenance-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/detail-maintenance/detail-maintenance.module */
         "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(function (m) {
           return m.DetailMaintenancePageModule;
@@ -297,9 +297,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'workshops',
       loadChildren: function loadChildren() {
-        return Promise.all(
+        return __webpack_require__.e(
         /*! import() | pages-workshops-workshops-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("pages-workshops-workshops-module")]).then(__webpack_require__.bind(null,
+        "pages-workshops-workshops-module").then(__webpack_require__.bind(null,
         /*! ./pages/workshops/workshops.module */
         "./src/app/pages/workshops/workshops.module.ts")).then(function (m) {
           return m.WorkshopsPageModule;
@@ -310,7 +310,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | pages-detail-workshop-detail-workshop-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/detail-workshop/detail-workshop.module */
         "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(function (m) {
           return m.DetailWorkshopPageModule;
@@ -321,7 +321,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | pages-detail-workshop-detail-workshop-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/detail-workshop/detail-workshop.module */
         "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(function (m) {
           return m.DetailWorkshopPageModule;
@@ -341,9 +341,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'detail-expense',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | pages-detail-expense-detail-expense-module */
-        "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-expense-detail-expense-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/detail-expense/detail-expense.module */
         "./src/app/pages/detail-expense/detail-expense.module.ts")).then(function (m) {
           return m.DetailExpensePageModule;
@@ -352,9 +352,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'detail-expense/:id',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | pages-detail-expense-detail-expense-module */
-        "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-expense-detail-expense-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/detail-expense/detail-expense.module */
         "./src/app/pages/detail-expense/detail-expense.module.ts")).then(function (m) {
           return m.DetailExpensePageModule;
@@ -391,6 +391,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /*! ./pages/detail-user/detail-user.module */
         "./src/app/pages/detail-user/detail-user.module.ts")).then(function (m) {
           return m.DetailUserPageModule;
+        });
+      }
+    }, {
+      path: 'login',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | pages-login-login-module */
+        "pages-login-login-module").then(__webpack_require__.bind(null,
+        /*! ./pages/login/login.module */
+        "./src/app/pages/login/login.module.ts")).then(function (m) {
+          return m.LoginPageModule;
+        });
+      }
+    }, {
+      path: 'register',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | pages-register-register-module */
+        "pages-register-register-module").then(__webpack_require__.bind(null,
+        /*! ./pages/register/register.module */
+        "./src/app/pages/register/register.module.ts")).then(function (m) {
+          return m.RegisterPageModule;
         });
       }
     }];
@@ -620,21 +642,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
-    /*! @angular/fire/firestore */
-    "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
+    var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! angularfire2/firestore */
+    "./node_modules/angularfire2/firestore/index.js");
     /* harmony import */
 
 
-    var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
-    /*! @angular/fire/auth */
-    "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-auth.js");
+    var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12__);
     /* harmony import */
 
 
-    var _angular_fire__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
-    /*! @angular/fire */
-    "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire.js");
+    var angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! angularfire2/auth */
+    "./node_modules/angularfire2/auth/index.js");
+    /* harmony import */
+
+
+    var angularfire2_auth__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__);
+    /* harmony import */
+
+
+    var angularfire2__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    /*! angularfire2 */
+    "./node_modules/angularfire2/index.js");
+    /* harmony import */
+
+
+    var angularfire2__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(angularfire2__WEBPACK_IMPORTED_MODULE_14__);
     /* harmony import */
 
 
@@ -646,7 +680,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
     /*! @ionic-native/file-opener/ngx */
-    "./node_modules/@ionic-native/file-opener/__ivy_ngcc__/ngx/index.js");
+    "./node_modules/@ionic-native/file-opener/__ivy_ngcc__/ngx/index.js"); // firebase //
+
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -656,7 +691,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]],
       entryComponents: [],
       imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"], _mobiscroll_angular__WEBPACK_IMPORTED_MODULE_2__["MbscModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"], //agregamos en nuestro Import
-      _angular_fire__WEBPACK_IMPORTED_MODULE_14__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].firebaseConfig), _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_12__["AngularFirestoreModule"], _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__["AngularFireAuthModule"], //for print pdf
+      angularfire2__WEBPACK_IMPORTED_MODULE_14__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].firebaseConfig), angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12__["AngularFirestoreModule"], angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__["AngularFireAuthModule"], //for print pdf
       _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"]],
       providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_7__["SplashScreen"], {
         provide: _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouteReuseStrategy"],
@@ -694,14 +729,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var environment = {
       production: false,
       firebaseConfig: {
-        apiKey: "AIzaSyBHYXkr-u4sG4l0q-5N_TmzD8qCbHnDI6M",
-        authDomain: "apps-a3e0b.firebaseapp.com",
-        databaseURL: "https://apps-a3e0b.firebaseio.com",
-        projectId: "apps-a3e0b",
-        storageBucket: "apps-a3e0b.appspot.com",
-        messagingSenderId: "714504144769",
-        appId: "1:714504144769:web:73dbd3a62a467752114a80",
-        measurementId: "G-9L7P2KYKTB"
+        apiKey: "AIzaSyCA3oSzrO_Pan-5H9Z1T3N0yYB0POn04zQ",
+        authDomain: "safecar-58c9b.firebaseapp.com",
+        projectId: "safecar-58c9b",
+        storageBucket: "safecar-58c9b.appspot.com",
+        messagingSenderId: "144987845867",
+        appId: "1:144987845867:web:eaeef2775580c58cfc7aae",
+        measurementId: "G-SW2EX284T8"
       }
     };
     /*

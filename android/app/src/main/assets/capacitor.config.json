@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "appking",
+  "appId": "com.app.safecar",
+  "appName": "SafeCar",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

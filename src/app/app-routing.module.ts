@@ -65,7 +65,16 @@ const routes: Routes = [
   {
     path: 'detail-user/:id',
     loadChildren: () => import('./pages/detail-user/detail-user.module').then( m => m.DetailUserPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   }
+
 
 ];
 @NgModule({

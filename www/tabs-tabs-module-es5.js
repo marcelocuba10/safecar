@@ -71,9 +71,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       children: [{
         path: 'cars',
         loadChildren: function loadChildren() {
-          return Promise.all(
+          return __webpack_require__.e(
           /*! import() | pages-cars-cars-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("pages-cars-cars-module")]).then(__webpack_require__.bind(null,
+          "pages-cars-cars-module").then(__webpack_require__.bind(null,
           /*! ../pages/cars/cars.module */
           "./src/app/pages/cars/cars.module.ts")).then(function (m) {
             return m.CarsPageModule;
@@ -84,7 +84,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-detail-car-detail-car-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
           /*! ../pages/detail-car/detail-car.module */
           "./src/app/pages/detail-car/detail-car.module.ts")).then(function (m) {
             return m.DetailCarPageModule;
@@ -95,7 +95,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-detail-car-detail-car-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null,
           /*! ../pages/detail-car/detail-car.module */
           "./src/app/pages/detail-car/detail-car.module.ts")).then(function (m) {
             return m.DetailCarPageModule;
@@ -115,9 +115,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         path: 'detail-maintenance',
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
+          return Promise.all(
           /*! import() | pages-detail-maintenance-detail-maintenance-module */
-          "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-maintenance-detail-maintenance-module")]).then(__webpack_require__.bind(null,
           /*! ../pages/detail-maintenance/detail-maintenance.module */
           "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(function (m) {
             return m.DetailMaintenancePageModule;
@@ -126,9 +126,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         path: 'detail-maintenance/:id',
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
+          return Promise.all(
           /*! import() | pages-detail-maintenance-detail-maintenance-module */
-          "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-maintenance-detail-maintenance-module")]).then(__webpack_require__.bind(null,
           /*! ../pages/detail-maintenance/detail-maintenance.module */
           "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(function (m) {
             return m.DetailMaintenancePageModule;
@@ -137,9 +137,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         path: 'workshops',
         loadChildren: function loadChildren() {
-          return Promise.all(
+          return __webpack_require__.e(
           /*! import() | pages-workshops-workshops-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("pages-workshops-workshops-module")]).then(__webpack_require__.bind(null,
+          "pages-workshops-workshops-module").then(__webpack_require__.bind(null,
           /*! ../pages/workshops/workshops.module */
           "./src/app/pages/workshops/workshops.module.ts")).then(function (m) {
             return m.WorkshopsPageModule;
@@ -150,7 +150,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-detail-workshop-detail-workshop-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
           /*! ../pages/detail-workshop/detail-workshop.module */
           "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(function (m) {
             return m.DetailWorkshopPageModule;
@@ -161,7 +161,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-detail-workshop-detail-workshop-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null,
           /*! ../pages/detail-workshop/detail-workshop.module */
           "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(function (m) {
             return m.DetailWorkshopPageModule;
@@ -181,9 +181,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         path: 'detail-expense',
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
+          return Promise.all(
           /*! import() | pages-detail-expense-detail-expense-module */
-          "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-expense-detail-expense-module")]).then(__webpack_require__.bind(null,
           /*! ../pages/detail-expense/detail-expense.module */
           "./src/app/pages/detail-expense/detail-expense.module.ts")).then(function (m) {
             return m.DetailExpensePageModule;
@@ -192,9 +192,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         path: 'detail-expense/:id',
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
+          return Promise.all(
           /*! import() | pages-detail-expense-detail-expense-module */
-          "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-expense-detail-expense-module")]).then(__webpack_require__.bind(null,
           /*! ../pages/detail-expense/detail-expense.module */
           "./src/app/pages/detail-expense/detail-expense.module.ts")).then(function (m) {
             return m.DetailExpensePageModule;

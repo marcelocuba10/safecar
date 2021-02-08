@@ -1,0 +1,49 @@
+
+
+<ion-content>
+  <ion-card class="card-style" mode="ios">
+    <center>
+      <img src="https://www.brandcrowd.com/gallery/brands/pictures/picture15296036052081.png" />
+    </center>
+
+    <ion-card-header>
+      <ion-card-title style="color: #025677;" class="ion-text-center">LOGIN</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input type="email" required [(ngModel)]="user.email" placeholder="Email">
+          <ion-icon name="person-outline"></ion-icon>&nbsp;&nbsp;
+        </ion-input>
+      </ion-item>
+      <ion-item class="ion-margin-top">
+        <ion-input type="password" required [(ngModel)]="user.password" placeholder="Contraseña">
+          <ion-icon name="key-outline"></ion-icon>&nbsp;&nbsp;
+        </ion-input>
+      </ion-item>
+      <ion-row style="margin-top: 10px;font-size: small;margin-bottom: 25px;">
+        <ion-col size="6">
+            <ion-label class="ion-text-center">Cadastre-se</ion-label>
+        </ion-col>
+        <ion-col size="6">
+            <ion-label class="ion-text-center">Esqueci minha senha</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-button expand="block" size="default" mode="ios" color="tertiary" [routerLink]="['/cars']">
+        Entrar
+      </ion-button>
+      <h3 class="ion-text-center" style="margin-top: 20px;">OU</h3>
+      <center style="font-size: 30px;margin-top: 15px;">
+        <ion-icon name="logo-facebook"></ion-icon>
+        &nbsp;
+        <ion-icon name="logo-google"></ion-icon>
+      </center>
+
+
+      <!-- <ion-button class="ion-padding" expand="full" color="light" [routerLink]="['../../register']">
+        Registrar
+      </ion-button> -->
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

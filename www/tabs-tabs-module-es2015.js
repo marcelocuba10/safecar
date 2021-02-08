@@ -38,15 +38,15 @@ const routes = [
         children: [
             {
                 path: 'cars',
-                loadChildren: () => Promise.all(/*! import() | pages-cars-cars-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-cars-cars-module")]).then(__webpack_require__.bind(null, /*! ../pages/cars/cars.module */ "./src/app/pages/cars/cars.module.ts")).then(m => m.CarsPageModule)
+                loadChildren: () => __webpack_require__.e(/*! import() | pages-cars-cars-module */ "pages-cars-cars-module").then(__webpack_require__.bind(null, /*! ../pages/cars/cars.module */ "./src/app/pages/cars/cars.module.ts")).then(m => m.CarsPageModule)
             },
             {
                 path: 'detail-car',
-                loadChildren: () => Promise.all(/*! import() | pages-detail-car-detail-car-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-car/detail-car.module */ "./src/app/pages/detail-car/detail-car.module.ts")).then(m => m.DetailCarPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-detail-car-detail-car-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-car/detail-car.module */ "./src/app/pages/detail-car/detail-car.module.ts")).then(m => m.DetailCarPageModule)
             },
             {
                 path: 'detail-car/:id',
-                loadChildren: () => Promise.all(/*! import() | pages-detail-car-detail-car-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-car/detail-car.module */ "./src/app/pages/detail-car/detail-car.module.ts")).then(m => m.DetailCarPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-detail-car-detail-car-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-car/detail-car.module */ "./src/app/pages/detail-car/detail-car.module.ts")).then(m => m.DetailCarPageModule)
             },
             {
                 path: 'maintenances',
@@ -54,23 +54,23 @@ const routes = [
             },
             {
                 path: 'detail-maintenance',
-                loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-maintenance-detail-maintenance-module */ "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null, /*! ../pages/detail-maintenance/detail-maintenance.module */ "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(m => m.DetailMaintenancePageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-detail-maintenance-detail-maintenance-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-maintenance-detail-maintenance-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-maintenance/detail-maintenance.module */ "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(m => m.DetailMaintenancePageModule)
             },
             {
                 path: 'detail-maintenance/:id',
-                loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-maintenance-detail-maintenance-module */ "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null, /*! ../pages/detail-maintenance/detail-maintenance.module */ "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(m => m.DetailMaintenancePageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-detail-maintenance-detail-maintenance-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-maintenance-detail-maintenance-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-maintenance/detail-maintenance.module */ "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(m => m.DetailMaintenancePageModule)
             },
             {
                 path: 'workshops',
-                loadChildren: () => Promise.all(/*! import() | pages-workshops-workshops-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-workshops-workshops-module")]).then(__webpack_require__.bind(null, /*! ../pages/workshops/workshops.module */ "./src/app/pages/workshops/workshops.module.ts")).then(m => m.WorkshopsPageModule)
+                loadChildren: () => __webpack_require__.e(/*! import() | pages-workshops-workshops-module */ "pages-workshops-workshops-module").then(__webpack_require__.bind(null, /*! ../pages/workshops/workshops.module */ "./src/app/pages/workshops/workshops.module.ts")).then(m => m.WorkshopsPageModule)
             },
             {
                 path: 'detail-workshop',
-                loadChildren: () => Promise.all(/*! import() | pages-detail-workshop-detail-workshop-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-workshop/detail-workshop.module */ "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(m => m.DetailWorkshopPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-detail-workshop-detail-workshop-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-workshop/detail-workshop.module */ "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(m => m.DetailWorkshopPageModule)
             },
             {
                 path: 'detail-workshop/:id',
-                loadChildren: () => Promise.all(/*! import() | pages-detail-workshop-detail-workshop-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-workshop/detail-workshop.module */ "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(m => m.DetailWorkshopPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-detail-workshop-detail-workshop-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-workshop/detail-workshop.module */ "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(m => m.DetailWorkshopPageModule)
             },
             {
                 path: 'expenses',
@@ -78,11 +78,11 @@ const routes = [
             },
             {
                 path: 'detail-expense',
-                loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-expense-detail-expense-module */ "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null, /*! ../pages/detail-expense/detail-expense.module */ "./src/app/pages/detail-expense/detail-expense.module.ts")).then(m => m.DetailExpensePageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-detail-expense-detail-expense-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-expense-detail-expense-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-expense/detail-expense.module */ "./src/app/pages/detail-expense/detail-expense.module.ts")).then(m => m.DetailExpensePageModule)
             },
             {
                 path: 'detail-expense/:id',
-                loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-expense-detail-expense-module */ "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null, /*! ../pages/detail-expense/detail-expense.module */ "./src/app/pages/detail-expense/detail-expense.module.ts")).then(m => m.DetailExpensePageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-detail-expense-detail-expense-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-expense-detail-expense-module")]).then(__webpack_require__.bind(null, /*! ../pages/detail-expense/detail-expense.module */ "./src/app/pages/detail-expense/detail-expense.module.ts")).then(m => m.DetailExpensePageModule)
             },
             {
                 path: 'user',

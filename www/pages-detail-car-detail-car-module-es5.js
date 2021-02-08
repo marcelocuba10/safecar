@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n\r\n  <ion-toolbar color=\"tertiary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button defaultHref=\"/cars\"></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\" *ngIf=\"id\">Detalhes do Veiculo</ion-title>\r\n    <ion-title class=\"ion-text-center\" *ngIf=\"!id\">Adicionar Novo Veiculo</ion-title>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button>\r\n        <ion-icon name=\"ellipsis-vertical-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <center>\r\n        <img style=\"width:70%\" src=\"../../../assets/img/no-image.png\" />\r\n      </center>\r\n      <ion-segment mode=\"ios\" value=\"all\" style=\"margin-bottom: 16px;\">\r\n        <ion-segment-button value=\"all\">\r\n          Detalhes\r\n        </ion-segment-button>\r\n        <ion-segment-button value=\"favorites\">\r\n          Fotos\r\n        </ion-segment-button>\r\n      </ion-segment>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Nome</ion-label>\r\n        <ion-input type=\"text\" autofocus required [(ngModel)]=\"car.nome\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Modelo</ion-label>\r\n        <ion-input type=\"text\" required [(ngModel)]=\"car.modelo\"></ion-input>\r\n      </ion-item>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Quilometragem</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.km\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Placa</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.placa\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid> \r\n      <ion-grid> \r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Cambio</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.cambio\">\r\n                <ion-select-option value=\"Automatico\">Automático</ion-select-option>\r\n                <ion-select-option value=\"Manual\">Manual</ion-select-option>\r\n                <ion-select-option value=\"Secuencial\">Sequencial</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Anho de Fabricação</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.anho_fabricacao\" ok-text=\"Aceptar\" cancel-text=\"Cancelar\">\r\n                <ion-select-option *ngFor=\"let year of years\" [value]=\"year\">{{year}}</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Marca</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.marca\">\r\n                <ion-select-option value=\"Audi\">Audi</ion-select-option>\r\n                <ion-select-option value=\"BMW\">BMW</ion-select-option>\r\n                <ion-select-option value=\"Toyota\">Toyota</ion-select-option>\r\n                <ion-select-option value=\"Nissan\">Nissan</ion-select-option>\r\n                <ion-select-option value=\"Wolkswagen\">Wolkswagen</ion-select-option>\r\n                <ion-select-option value=\"Ford\">Ford</ion-select-option>\r\n                <ion-select-option value=\"Fiat\">Fiat</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n              <ion-item>\r\n                <ion-label position=\"stacked\">(*)Cor</ion-label>\r\n                <ion-select interface=\"popover\" required [(ngModel)]=\"car.cor\">\r\n                  <ion-select-option value=\"Amarelo\">Amarelo</ion-select-option>\r\n                  <ion-select-option value=\"Azul\">Azul</ion-select-option>\r\n                  <ion-select-option value=\"Preto\">Preto</ion-select-option>\r\n                  <ion-select-option value=\"Branco\">Branco</ion-select-option>\r\n                  <ion-select-option value=\"Cinza\">Cinza</ion-select-option>\r\n                  <ion-select-option value=\"Verde\">Verde</ion-select-option>\r\n                  <ion-select-option value=\"Vermelho\">Vermelho</ion-select-option>\r\n                </ion-select>\r\n              </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Carroceria</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.carroceria\">\r\n                <ion-select-option value=\"Hatch\">Hatch</ion-select-option>\r\n                <ion-select-option value=\"Sedan\">Sedan</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Portas</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.portas\">\r\n                <ion-select-option value=\"2\">2</ion-select-option>\r\n                <ion-select-option value=\"3\">3</ion-select-option>\r\n                <ion-select-option value=\"4\">4</ion-select-option>\r\n                <ion-select-option value=\"5\">5</ion-select-option>\r\n                <ion-select-option value=\"6\">6</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Motorização</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.motorizacao\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Combustivel</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.combustivel\">\r\n                <ion-select-option value=\"Gasolina\">Gasolina</ion-select-option>\r\n                <ion-select-option value=\"Diesel\">Diesel</ion-select-option>\r\n                <ion-select-option value=\"Alcool\">Alcool</ion-select-option>\r\n                <ion-select-option value=\"Flex\">Flex</ion-select-option>\r\n                <ion-select-option value=\"Eletrico\">Elétrico</ion-select-option>\r\n                <ion-select-option value=\"Gnv\">Gnv</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Chassi</ion-label>\r\n        <ion-input type=\"text\" required [(ngModel)]=\"car.chassi\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">Observações</ion-label>\r\n        <ion-textarea placeholder=\"...\"></ion-textarea>\r\n      </ion-item>\r\n      <ion-item-group class=\"ion-text-center ion-margin-top\">\r\n        <ion-button mode=\"ios\" color=\"medium\" routerLink=\"/cars\">\r\n          <ion-icon name=\"arrow-back-outline\"></ion-icon>Voltar\r\n        </ion-button>\r\n        <ion-button mode=\"ios\" color=\"success\" (click)=\"savedata(car)\">\r\n          <ion-icon class=\"m-icon\" name=\"save-outline\"></ion-icon>Salvar\r\n        </ion-button>\r\n      </ion-item-group>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header>\r\n\r\n  <ion-toolbar color=\"tertiary\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button defaultHref=\"/cars\"></ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title class=\"ion-text-center\" *ngIf=\"id\">Detalhes do Veiculo</ion-title>\r\n    <ion-title class=\"ion-text-center\" *ngIf=\"!id\">Adicionar Novo Veiculo</ion-title>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button>\r\n        <ion-icon name=\"ellipsis-vertical-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <center>\r\n        <img style=\"width:70%\" src=\"../../../assets/img/no-image.png\" />\r\n      </center>\r\n      <ion-segment mode=\"ios\" value=\"all\" style=\"margin-bottom: 16px;\">\r\n        <ion-segment-button value=\"all\">\r\n          Detalhes\r\n        </ion-segment-button>\r\n        <ion-segment-button value=\"favorites\">\r\n          Fotos\r\n        </ion-segment-button>\r\n      </ion-segment>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Nome</ion-label>\r\n        <ion-input type=\"text\" autofocus required [(ngModel)]=\"car.nome\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Modelo</ion-label>\r\n        <ion-input type=\"text\" required [(ngModel)]=\"car.modelo\"></ion-input>\r\n      </ion-item>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Quilometragem</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.km\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Placa</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.placa\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid> \r\n      <ion-grid> \r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Cambio</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.cambio\">\r\n                <ion-select-option value=\"Automatico\">Automático</ion-select-option>\r\n                <ion-select-option value=\"Manual\">Manual</ion-select-option>\r\n                <ion-select-option value=\"Secuencial\">Sequencial</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Anho de Fabricação</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.anho_fabricacao\" ok-text=\"Aceptar\" cancel-text=\"Cancelar\">\r\n                <ion-select-option *ngFor=\"let year of years\" [value]=\"year\">{{year}}</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Marca</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.marca\">\r\n                <ion-select-option value=\"Audi\">Audi</ion-select-option>\r\n                <ion-select-option value=\"BMW\">BMW</ion-select-option>\r\n                <ion-select-option value=\"Toyota\">Toyota</ion-select-option>\r\n                <ion-select-option value=\"Nissan\">Nissan</ion-select-option>\r\n                <ion-select-option value=\"Wolkswagen\">Wolkswagen</ion-select-option>\r\n                <ion-select-option value=\"Ford\">Ford</ion-select-option>\r\n                <ion-select-option value=\"Fiat\">Fiat</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n              <ion-item>\r\n                <ion-label position=\"stacked\">(*)Cor</ion-label>\r\n                <ion-select interface=\"popover\" required [(ngModel)]=\"car.cor\">\r\n                  <ion-select-option value=\"Amarelo\">Amarelo</ion-select-option>\r\n                  <ion-select-option value=\"Azul\">Azul</ion-select-option>\r\n                  <ion-select-option value=\"Preto\">Preto</ion-select-option>\r\n                  <ion-select-option value=\"Branco\">Branco</ion-select-option>\r\n                  <ion-select-option value=\"Cinza\">Cinza</ion-select-option>\r\n                  <ion-select-option value=\"Verde\">Verde</ion-select-option>\r\n                  <ion-select-option value=\"Vermelho\">Vermelho</ion-select-option>\r\n                </ion-select>\r\n              </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Carroceria</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.carroceria\">\r\n                <ion-select-option value=\"Hatch\">Hatch</ion-select-option>\r\n                <ion-select-option value=\"Sedan\">Sedan</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Portas</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.portas\">\r\n                <ion-select-option value=\"2\">2</ion-select-option>\r\n                <ion-select-option value=\"3\">3</ion-select-option>\r\n                <ion-select-option value=\"4\">4</ion-select-option>\r\n                <ion-select-option value=\"5\">5</ion-select-option>\r\n                <ion-select-option value=\"6\">6</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n        <ion-row>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Motorização</ion-label>\r\n              <ion-input type=\"text\" required [(ngModel)]=\"car.motorizacao\"></ion-input>\r\n            </ion-item>\r\n          </ion-col>\r\n          <ion-col>\r\n            <ion-item>\r\n              <ion-label position=\"stacked\">(*)Combustivel</ion-label>\r\n              <ion-select interface=\"popover\" required [(ngModel)]=\"car.combustivel\">\r\n                <ion-select-option value=\"Gasolina\">Gasolina</ion-select-option>\r\n                <ion-select-option value=\"Diesel\">Diesel</ion-select-option>\r\n                <ion-select-option value=\"Alcool\">Alcool</ion-select-option>\r\n                <ion-select-option value=\"Flex\">Flex</ion-select-option>\r\n                <ion-select-option value=\"Eletrico\">Elétrico</ion-select-option>\r\n                <ion-select-option value=\"Gnv\">Gnv</ion-select-option>\r\n              </ion-select>\r\n            </ion-item>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">(*)Chassi</ion-label>\r\n        <ion-input type=\"text\" required [(ngModel)]=\"car.chassi\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"stacked\">Observações</ion-label>\r\n        <ion-textarea [(ngModel)]=\"car.observacoes\" placeholder=\"...\"></ion-textarea>\r\n      </ion-item>\r\n      <ion-item-group class=\"ion-text-center ion-margin-top\">\r\n        <ion-button mode=\"ios\" color=\"medium\" routerLink=\"/cars\">\r\n          <ion-icon name=\"arrow-back-outline\"></ion-icon>Voltar\r\n        </ion-button>\r\n        <ion-button mode=\"ios\" color=\"success\" (click)=\"savedata(car)\">\r\n          <ion-icon class=\"m-icon\" name=\"save-outline\"></ion-icon>Salvar\r\n        </ion-button>\r\n      </ion-item-group>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n</ion-content>";
     /***/
   },
 
@@ -261,8 +261,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this = this;
 
           this.apiService.getCarById(this.id).subscribe(function (response) {
-            console.log("page", response);
             _this.car = response;
+            console.log("response", response);
           });
         }
       }, {
@@ -276,50 +276,51 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 switch (_context.prev = _context.next) {
                   case 0:
                     _context.next = 2;
-                    return this.formValidation();
+                    return this.appService.formValidation(this.car);
 
                   case 2:
                     if (!_context.sent) {
-                      _context.next = 20;
-                      break;
-                    }
-
-                    _context.next = 5;
-                    return this.presentLoading();
-
-                  case 5:
-                    if (!this.id) {
                       _context.next = 19;
                       break;
                     }
 
-                    console.log(this.id);
-                    console.log(this.car);
-                    _context.prev = 8;
-                    _context.next = 11;
-                    return this.apiService.updateCar(this.id, this.car).subscribe(function (response) {
-                      _this2.loading.dismiss();
+                    _context.next = 5;
+                    return this.appService.presentLoading(1);
 
-                      _this2.appService.presentToast("Veiculo processado com exito!");
+                  case 5:
+                    if (!this.id) {
+                      _context.next = 18;
+                      break;
+                    }
+
+                    _context.prev = 6;
+                    _context.next = 9;
+                    return this.apiService.updateCar(this.id, this.car).subscribe(function (response) {
+                      _this2.appService.presentLoading(0);
+
+                      console.log(_this2.appService.presentLoading(0));
+
+                      _this2.appService.presentToast("Veiculo atualizado com exito!");
 
                       _this2.navCtrl.navigateRoot("/cars");
                     });
 
+                  case 9:
+                    _context.next = 16;
+                    break;
+
                   case 11:
-                    _context.next = 17;
-                    break;
-
-                  case 13:
-                    _context.prev = 13;
-                    _context.t0 = _context["catch"](8);
+                    _context.prev = 11;
+                    _context.t0 = _context["catch"](6);
                     this.appService.presentToast(_context.t0);
-                    this.loading.dismiss();
+                    this.appService.presentLoading(0);
+                    console.log(this.appService.presentLoading(0));
 
-                  case 17:
-                    _context.next = 20;
+                  case 16:
+                    _context.next = 19;
                     break;
 
-                  case 19:
+                  case 18:
                     try {
                       console.log(data);
                       this.apiService.createCar(data).subscribe(function (response) {
@@ -327,172 +328,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                         _this2.navCtrl.navigateRoot("/cars");
                       });
-                      this.loading.dismiss();
-                      this.appService.presentToast("Veiculo processado com exito!");
+                      this.appService.presentLoading(0);
+                      this.appService.presentToast("Veiculo criado com exito!");
                       this.navCtrl.navigateRoot("/cars");
                     } catch (error) {
                       this.appService.presentToast(error);
-                      this.loading.dismiss();
+                      this.appService.presentLoading(0);
                       console.log(error);
                     }
 
-                  case 20:
+                  case 19:
                   case "end":
                     return _context.stop();
                 }
               }
-            }, _callee, this, [[8, 13]]);
-          }));
-        }
-      }, {
-        key: "presentLoading",
-        value: function presentLoading() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-            return regeneratorRuntime.wrap(function _callee2$(_context2) {
-              while (1) {
-                switch (_context2.prev = _context2.next) {
-                  case 0:
-                    _context2.next = 2;
-                    return this.loadingCtrl.create({
-                      message: "Espere.."
-                    });
-
-                  case 2:
-                    this.loading = _context2.sent;
-                    return _context2.abrupt("return", this.loading.present());
-
-                  case 4:
-                  case "end":
-                    return _context2.stop();
-                }
-              }
-            }, _callee2, this);
-          }));
-        }
-      }, {
-        key: "formValidation",
-        value: function formValidation() {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-            return regeneratorRuntime.wrap(function _callee3$(_context3) {
-              while (1) {
-                switch (_context3.prev = _context3.next) {
-                  case 0:
-                    if (this.car.nome) {
-                      _context3.next = 3;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira o nome do veiculo");
-                    return _context3.abrupt("return", false);
-
-                  case 3:
-                    if (this.car.anho_fabricacao) {
-                      _context3.next = 6;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira o anho de fabricacao");
-                    return _context3.abrupt("return", false);
-
-                  case 6:
-                    if (this.car.modelo) {
-                      _context3.next = 9;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira um modelo");
-                    return _context3.abrupt("return", false);
-
-                  case 9:
-                    if (this.car.cambio) {
-                      _context3.next = 12;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira o cambio");
-                    return _context3.abrupt("return", false);
-
-                  case 12:
-                    if (this.car.km) {
-                      _context3.next = 15;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira o quilometragem");
-                    return _context3.abrupt("return", false);
-
-                  case 15:
-                    if (this.car.placa) {
-                      _context3.next = 18;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira a placa");
-                    return _context3.abrupt("return", false);
-
-                  case 18:
-                    if (this.car.cor) {
-                      _context3.next = 21;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira o color");
-                    return _context3.abrupt("return", false);
-
-                  case 21:
-                    if (this.car.carroceria) {
-                      _context3.next = 24;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira a carroceria");
-                    return _context3.abrupt("return", false);
-
-                  case 24:
-                    if (this.car.portas) {
-                      _context3.next = 27;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira o nro das portas");
-                    return _context3.abrupt("return", false);
-
-                  case 27:
-                    if (this.car.motorizacao) {
-                      _context3.next = 30;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira a motorizacao");
-                    return _context3.abrupt("return", false);
-
-                  case 30:
-                    if (this.car.combustivel) {
-                      _context3.next = 33;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira o tipo de combustivel");
-                    return _context3.abrupt("return", false);
-
-                  case 33:
-                    if (this.car.chassi) {
-                      _context3.next = 36;
-                      break;
-                    }
-
-                    this.appService.presentAlert("Insira o nro do chassi");
-                    return _context3.abrupt("return", false);
-
-                  case 36:
-                    return _context3.abrupt("return", true);
-
-                  case 37:
-                  case "end":
-                    return _context3.stop();
-                }
-              }
-            }, _callee3, this);
+            }, _callee, this, [[6, 11]]);
           }));
         }
       }]);

@@ -235,14 +235,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./src/app/services/app.service.ts");
 
     var DetailWorkshopPage = /*#__PURE__*/function () {
-      function DetailWorkshopPage(actRoute, apiService, navCtrl, appService, loadingCtrl) {
+      function DetailWorkshopPage(actRoute, apiService, navCtrl, appService) {
         _classCallCheck(this, DetailWorkshopPage);
 
         this.actRoute = actRoute;
         this.apiService = apiService;
         this.navCtrl = navCtrl;
         this.appService = appService;
-        this.loadingCtrl = loadingCtrl;
         this.workshop = {};
         this.id = this.actRoute.snapshot.paramMap.get("id");
         console.log(this.id);
@@ -279,8 +278,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"]
       }, {
         type: src_app_services_app_service__WEBPACK_IMPORTED_MODULE_5__["AppService"]
-      }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["LoadingController"]
       }];
     };
 

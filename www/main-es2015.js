@@ -321,7 +321,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n    <ion-split-pane contentId=\"menu-content\" when=\"xs\" [disabled]=\"true\"\r\n    (ionSplitPaneVisible)=\"onSplitPaneVisible(event)\">\r\n    <ion-menu contentId=\"menu-content\" menuId=\"menu-content\" side=\"start\" type=\"overlay\">\r\n      <ion-header>\r\n        <ion-toolbar translucent>\r\n          <ion-title>SafeCar</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/tabs']\">\r\n              <ion-icon name=\"home\" slot=\"start\"></ion-icon>\r\n              <ion-label>Inicio</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/workshops']\">\r\n              <ion-icon name=\"location-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Mecanicas</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/cars']\">\r\n              <ion-icon name=\"car-sport-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Veiculos</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/expenses']\">\r\n              <ion-icon name=\"cash-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Despesas</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/maintenances']\">\r\n              <ion-icon name=\"build-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Manutenções</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/user']\">\r\n              <ion-icon name=\"person-circle-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Meu Perfil</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item>\r\n              <ion-icon name=\"log-out-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Sair</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"menu-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n    <ion-split-pane contentId=\"menu-content\" when=\"xs\" [disabled]=\"true\"\r\n    (ionSplitPaneVisible)=\"onSplitPaneVisible(event)\">\r\n    <ion-menu mode=\"ios\" contentId=\"menu-content\" menuId=\"menu-content\" side=\"start\" type=\"overlay\">\r\n      <ion-header>\r\n        <ion-toolbar translucent>\r\n          <ion-title>SafeCar</ion-title>\r\n        </ion-toolbar>\r\n      </ion-header>\r\n      <ion-content>\r\n        <ion-list>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/tabs']\">\r\n              <ion-icon name=\"home\" slot=\"start\"></ion-icon>\r\n              <ion-label>Inicio</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/workshops']\">\r\n              <ion-icon name=\"location-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Mecanicas</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/cars']\">\r\n              <ion-icon name=\"car-sport-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Veiculos</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/expenses']\">\r\n              <ion-icon name=\"cash-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Despesas</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/maintenances']\">\r\n              <ion-icon name=\"build-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Manutenções</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/user']\">\r\n              <ion-icon name=\"person-circle-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Meu Perfil</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n          <ion-menu-toggle auto-hide=\"false\">\r\n            <ion-item [routerLink]=\"['/login']\">\r\n              <ion-icon name=\"log-out-outline\" slot=\"start\"></ion-icon>\r\n              <ion-label>Sair</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"menu-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -348,15 +348,15 @@ const routes = [
     },
     {
         path: 'cars',
-        loadChildren: () => Promise.all(/*! import() | pages-cars-cars-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-cars-cars-module")]).then(__webpack_require__.bind(null, /*! ./pages/cars/cars.module */ "./src/app/pages/cars/cars.module.ts")).then(m => m.CarsPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-cars-cars-module */ "pages-cars-cars-module").then(__webpack_require__.bind(null, /*! ./pages/cars/cars.module */ "./src/app/pages/cars/cars.module.ts")).then(m => m.CarsPageModule)
     },
     {
         path: 'detail-car',
-        loadChildren: () => Promise.all(/*! import() | pages-detail-car-detail-car-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-car/detail-car.module */ "./src/app/pages/detail-car/detail-car.module.ts")).then(m => m.DetailCarPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-detail-car-detail-car-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-car/detail-car.module */ "./src/app/pages/detail-car/detail-car.module.ts")).then(m => m.DetailCarPageModule)
     },
     {
         path: 'detail-car/:id',
-        loadChildren: () => Promise.all(/*! import() | pages-detail-car-detail-car-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-car/detail-car.module */ "./src/app/pages/detail-car/detail-car.module.ts")).then(m => m.DetailCarPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-detail-car-detail-car-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-car-detail-car-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-car/detail-car.module */ "./src/app/pages/detail-car/detail-car.module.ts")).then(m => m.DetailCarPageModule)
     },
     {
         path: 'maintenances',
@@ -364,23 +364,23 @@ const routes = [
     },
     {
         path: 'detail-maintenance',
-        loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-maintenance-detail-maintenance-module */ "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null, /*! ./pages/detail-maintenance/detail-maintenance.module */ "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(m => m.DetailMaintenancePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-detail-maintenance-detail-maintenance-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-maintenance-detail-maintenance-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-maintenance/detail-maintenance.module */ "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(m => m.DetailMaintenancePageModule)
     },
     {
         path: 'detail-maintenance/:id',
-        loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-maintenance-detail-maintenance-module */ "pages-detail-maintenance-detail-maintenance-module").then(__webpack_require__.bind(null, /*! ./pages/detail-maintenance/detail-maintenance.module */ "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(m => m.DetailMaintenancePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-detail-maintenance-detail-maintenance-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-maintenance-detail-maintenance-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-maintenance/detail-maintenance.module */ "./src/app/pages/detail-maintenance/detail-maintenance.module.ts")).then(m => m.DetailMaintenancePageModule)
     },
     {
         path: 'workshops',
-        loadChildren: () => Promise.all(/*! import() | pages-workshops-workshops-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-workshops-workshops-module")]).then(__webpack_require__.bind(null, /*! ./pages/workshops/workshops.module */ "./src/app/pages/workshops/workshops.module.ts")).then(m => m.WorkshopsPageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-workshops-workshops-module */ "pages-workshops-workshops-module").then(__webpack_require__.bind(null, /*! ./pages/workshops/workshops.module */ "./src/app/pages/workshops/workshops.module.ts")).then(m => m.WorkshopsPageModule)
     },
     {
         path: 'detail-workshop',
-        loadChildren: () => Promise.all(/*! import() | pages-detail-workshop-detail-workshop-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-workshop/detail-workshop.module */ "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(m => m.DetailWorkshopPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-detail-workshop-detail-workshop-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-workshop/detail-workshop.module */ "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(m => m.DetailWorkshopPageModule)
     },
     {
         path: 'detail-workshop/:id',
-        loadChildren: () => Promise.all(/*! import() | pages-detail-workshop-detail-workshop-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-workshop/detail-workshop.module */ "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(m => m.DetailWorkshopPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-detail-workshop-detail-workshop-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-workshop-detail-workshop-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-workshop/detail-workshop.module */ "./src/app/pages/detail-workshop/detail-workshop.module.ts")).then(m => m.DetailWorkshopPageModule)
     },
     {
         path: 'expenses',
@@ -388,11 +388,11 @@ const routes = [
     },
     {
         path: 'detail-expense',
-        loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-expense-detail-expense-module */ "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null, /*! ./pages/detail-expense/detail-expense.module */ "./src/app/pages/detail-expense/detail-expense.module.ts")).then(m => m.DetailExpensePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-detail-expense-detail-expense-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-expense-detail-expense-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-expense/detail-expense.module */ "./src/app/pages/detail-expense/detail-expense.module.ts")).then(m => m.DetailExpensePageModule)
     },
     {
         path: 'detail-expense/:id',
-        loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-expense-detail-expense-module */ "pages-detail-expense-detail-expense-module").then(__webpack_require__.bind(null, /*! ./pages/detail-expense/detail-expense.module */ "./src/app/pages/detail-expense/detail-expense.module.ts")).then(m => m.DetailExpensePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-detail-expense-detail-expense-module */[__webpack_require__.e("default~pages-detail-car-detail-car-module~pages-detail-expense-detail-expense-module~pages-detail-m~c44f52cf"), __webpack_require__.e("pages-detail-expense-detail-expense-module")]).then(__webpack_require__.bind(null, /*! ./pages/detail-expense/detail-expense.module */ "./src/app/pages/detail-expense/detail-expense.module.ts")).then(m => m.DetailExpensePageModule)
     },
     {
         path: 'user',
@@ -405,6 +405,14 @@ const routes = [
     {
         path: 'detail-user/:id',
         loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-user-detail-user-module */ "pages-detail-user-detail-user-module").then(__webpack_require__.bind(null, /*! ./pages/detail-user/detail-user.module */ "./src/app/pages/detail-user/detail-user.module.ts")).then(m => m.DetailUserPageModule)
+    },
+    {
+        path: 'login',
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-login-login-module */ "pages-login-login-module").then(__webpack_require__.bind(null, /*! ./pages/login/login.module */ "./src/app/pages/login/login.module.ts")).then(m => m.LoginPageModule)
+    },
+    {
+        path: 'register',
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-register-register-module */ "pages-register-register-module").then(__webpack_require__.bind(null, /*! ./pages/register/register.module */ "./src/app/pages/register/register.module.ts")).then(m => m.RegisterPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -508,9 +516,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-auth.js");
-/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
+/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(angularfire2__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _ionic_native_file_opener_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/file-opener/ngx */ "./node_modules/@ionic-native/file-opener/__ivy_ngcc__/ngx/index.js");
 
@@ -524,6 +535,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// firebase //
 
 
 
@@ -543,9 +555,9 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"].forRoot(),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
             //agregamos en nuestro Import
-            _angular_fire__WEBPACK_IMPORTED_MODULE_14__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].firebaseConfig),
-            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_12__["AngularFirestoreModule"],
-            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_13__["AngularFireAuthModule"],
+            angularfire2__WEBPACK_IMPORTED_MODULE_14__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].firebaseConfig),
+            angularfire2_firestore__WEBPACK_IMPORTED_MODULE_12__["AngularFirestoreModule"],
+            angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__["AngularFireAuthModule"],
             //for print pdf
             _angular_common_http__WEBPACK_IMPORTED_MODULE_15__["HttpClientModule"]
         ],
@@ -579,14 +591,13 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     firebaseConfig: {
-        apiKey: "AIzaSyBHYXkr-u4sG4l0q-5N_TmzD8qCbHnDI6M",
-        authDomain: "apps-a3e0b.firebaseapp.com",
-        databaseURL: "https://apps-a3e0b.firebaseio.com",
-        projectId: "apps-a3e0b",
-        storageBucket: "apps-a3e0b.appspot.com",
-        messagingSenderId: "714504144769",
-        appId: "1:714504144769:web:73dbd3a62a467752114a80",
-        measurementId: "G-9L7P2KYKTB"
+        apiKey: "AIzaSyCA3oSzrO_Pan-5H9Z1T3N0yYB0POn04zQ",
+        authDomain: "safecar-58c9b.firebaseapp.com",
+        projectId: "safecar-58c9b",
+        storageBucket: "safecar-58c9b.appspot.com",
+        messagingSenderId: "144987845867",
+        appId: "1:144987845867:web:eaeef2775580c58cfc7aae",
+        measurementId: "G-SW2EX284T8"
     }
 };
 /*
