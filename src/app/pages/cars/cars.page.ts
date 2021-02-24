@@ -1,3 +1,5 @@
+import { AppService } from './../../services/app.service';
+import { AngularFirestore } from 'angularfire2/firestore';
 import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
@@ -10,7 +12,9 @@ export class CarsPage implements OnInit {
   private cars: any;
 
   constructor(
-    public apiService: ApiService
+    public apiService: ApiService,
+    private firestore: AngularFirestore,
+    private appService: AppService
   ) { }
 
   ngOnInit() {

@@ -1,14 +1,11 @@
-import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { WorkshopsPageRoutingModule } from './workshops-routing.module';
-
 import { WorkshopsPage } from './workshops.page';
 import { RouterModule } from '@angular/router';
-import { MiAcordionComponent  } from 'src/app/components/mi-acordion/mi-acordion.component';
+import { MiAcordionComponent } from 'src/app/components/mi-acordion/mi-acordion.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -16,13 +13,13 @@ import { MiAcordionComponent  } from 'src/app/components/mi-acordion/mi-acordion
     IonicModule,
     RouterModule.forChild([
       {
-        path:'',
+        path: '',
         component: WorkshopsPage
       }
     ]),
     WorkshopsPageRoutingModule
   ],
-  declarations: [WorkshopsPage,MiAcordionComponent],
+  declarations: [WorkshopsPage, MiAcordionComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class WorkshopsPageModule {}
+export class WorkshopsPageModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoadingController, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 import { Cars } from 'src/app/models/cars';
 import { ApiService } from 'src/app/services/api.service';
 import { AppService } from 'src/app/services/app.service';
@@ -15,7 +15,6 @@ export class DetailExpensePage implements OnInit {
 
   private id: any;
   private expense = {} as Expenses;
-  private loading: any;
   public car_name: string;
   private cars: any;
   private dateFormat: string;
@@ -24,8 +23,7 @@ export class DetailExpensePage implements OnInit {
     private actRoute: ActivatedRoute,
     public apiService: ApiService,
     private navCtrl: NavController,
-    private appService: AppService,
-    private loadingCtrl: LoadingController,
+    private appService: AppService
   ) {
     this.id = this.actRoute.snapshot.paramMap.get("id");
   }
@@ -42,14 +40,12 @@ export class DetailExpensePage implements OnInit {
 
   onChange($event) {
     this.dateFormat = this.appService.getDate($event);
-    console.log(this.dateFormat);
   }
 
   public getExpenseById() {
     this.apiService.getExpenseById(this.id).
       subscribe(response => {
         this.expense = response;
-        console.log("response", this.expense);
         this.getCarById();
       });
 
@@ -66,20 +62,18 @@ export class DetailExpensePage implements OnInit {
     this.apiService.getCarById(this.expense.id_veiculo).
       subscribe(response => {
         this.car_name = response.nome;
-        console.log("response", this.car_name);
       });
   }
 
   async savedata(data) {
 
-    if (await this.appService.formValidation(this.expense)) {
+    if (await this.appService.formValidation(this.expense, "expense")) {
       await this.appService.presentLoading(1);
       this.expense.data = this.dateFormat;
 
       if (this.id) {
         try {
           await this.apiService.updateExpense(this.id, this.expense).subscribe(response => {
-            console.log('response:', response);
             this.appService.presentLoading(0);
             this.appService.presentToast("Despesa atualizada com exito!")
             this.navCtrl.navigateRoot("/expenses");
@@ -87,20 +81,15 @@ export class DetailExpensePage implements OnInit {
         } catch (error) {
           this.appService.presentToast(error);
           this.appService.presentLoading(0);
+          console.log(error);
         }
-
       } else {
         try {
-          console.log(data);
           this.apiService.createExpense(data).subscribe((response) => {
-            console.log('response:', response);
+            this.appService.presentLoading(0);
+            this.appService.presentToast("Despesa criada com exito!")
             this.navCtrl.navigateRoot("/expenses");
           });
-
-          this.appService.presentLoading(0);
-          this.appService.presentToast("Despesa criada com exito!")
-          this.navCtrl.navigateRoot("/expenses");
-
         } catch (error) {
           this.appService.presentToast(error);
           this.appService.presentLoading(0);

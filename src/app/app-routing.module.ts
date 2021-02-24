@@ -35,14 +35,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/workshops/workshops.module').then( m => m.WorkshopsPageModule)
   },
   {
-    path: 'detail-workshop',
-    loadChildren: () => import('./pages/detail-workshop/detail-workshop.module').then( m => m.DetailWorkshopPageModule)
-  },
-  {
-    path: 'detail-workshop/:id',
-    loadChildren: () => import('./pages/detail-workshop/detail-workshop.module').then( m => m.DetailWorkshopPageModule)
-  },
-  {
     path: 'expenses',
     loadChildren: () => import('./pages/expenses/expenses.module').then( m => m.ExpensesPageModule)
   },

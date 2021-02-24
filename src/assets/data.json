@@ -1,0 +1,126 @@
+{
+  "maintenances": [
+    {
+      "data": "01/10/2021",
+      "km": "545",
+      "km_prox": "454",
+      "manutencao": "Filtro de Aire",
+      "mecanica": "taller mecanico 1",
+      "custo": "54545",
+      "observacoes": "fgfgfdg",
+      "id": "zhAijoO"
+    },
+    {
+      "data": "03/02/2021",
+      "km": "6456",
+      "km_prox": "4656",
+      "manutencao": "Filtro de Aire",
+      "mecanica": "taller mecanico 1",
+      "custo": "6757567",
+      "observacoes": "ghgfhfgh",
+      "id": "NitdTKp"
+    }
+  ],
+  "cars": [
+    {
+      "nome": "Toyota Hilux V5",
+      "ativo": 1,
+      "anho_fabricacao": 2020,
+      "modelo": "X6",
+      "marca": "Audi",
+      "cambio": "Automatico",
+      "km": 85.522,
+      "placa": "254FGH",
+      "cor": "Azul",
+      "carroceria": "Hatch",
+      "portas": "4",
+      "motorizacao": "2.7",
+      "combustivel": "Diesel",
+      "chassi": "456565788797979887",
+      "valor": "85.000",
+      "observacoes": "....gfgfgnn",
+      "id": "EgxPRK6"
+    },
+    {
+      "nome": "Toyota Premio",
+      "ativo": 1,
+      "anho_fabricacao": 2020,
+      "modelo": "X6",
+      "marca": "Fiat",
+      "cambio": "Manual",
+      "km": 85.522,
+      "placa": "254-FGH",
+      "cor": "Verde",
+      "carroceria": "Hatch",
+      "portas": "4",
+      "motorizacao": "2.0",
+      "combustivel": "Gasolina",
+      "chassi": "456565788797979887",
+      "valor": "85.000",
+      "id": "EgxPRKr"
+    }
+  ],
+  "workshops": [
+    {
+      "nome": "taller mecanico 1",
+      "telefone": "0994 994 254",
+      "endereco": "Av Aviadores del chaco nro 3454",
+      "RUC": "4545451-1",
+      "email": "taller_mecanico@hotmail.com",
+      "responsavel": "Juan Rodriguez",
+      "id": "EgCLRKr"
+    },
+    {
+      "nome": "taller mecanico 2",
+      "telefone": "0994 994 254",
+      "endereco": "Av Aviadores del chaco nro 3454",
+      "RUC": "4545451-1",
+      "email": "taller_mecanico@hotmail.com",
+      "responsavel": "Juan Rodriguez",
+      "id": "TRD45G"
+    }
+  ],
+  "expenses": [
+    {
+      "nome": "Chaperia pinturaaa",
+      "custo": "620322",
+      "observacoes": "45454654gdfgdfgfd",
+      "data": "02/02/2021",
+      "id_veiculo": "EgxPRK6",
+      "id": "TRD45G"
+    },
+    {
+      "nome": "Pneus novo x4",
+      "custo": "400000",
+      "data": "02/03/2021",
+      "id_veiculo": "EgxPRK6",
+      "observacoes": "ghfghgfhfghg",
+      "id": "MfAvqpJ"
+    },
+    {
+      "nome": "fdfsdfds",
+      "data": "02/02/2018",
+      "custo": "43434",
+      "id_veiculo": "EgxPRKr",
+      "id": "BUnI4NB",
+      "observacoes": "bvbvcbcvbv"
+    }
+  ],
+  "users": [
+    {
+      "nome": "Adolfo Thomas",
+      "CPF": 151512,
+      "RG": 1251541551,
+      "nascimento": "20/01/2021",
+      "email": "user@app.com",
+      "senha": "xxxxxxxx",
+      "telefone": "0994994224",
+      "endereco": "av fdf errerd",
+      "bairro": "av mefdsfdnsu errerd",
+      "cidade": "av sfdsfd errerd",
+      "estado": "sfdsfds",
+      "pais": "sfdsfds",
+      "id": "TRD45G"
+    }
+  ]
+}

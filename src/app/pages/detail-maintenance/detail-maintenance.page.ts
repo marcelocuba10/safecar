@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoadingController, NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 import { Maintenance } from 'src/app/models/maintenance';
 import { ApiService } from 'src/app/services/api.service';
 import { AppService } from 'src/app/services/app.service';
-
 @Component({
   selector: 'app-detail-maintenance',
   templateUrl: './detail-maintenance.page.html',
@@ -14,7 +13,6 @@ export class DetailMaintenancePage implements OnInit {
 
   private id: any;
   private maintenance = {} as Maintenance;
-  private loading: any;
   private workshops: any;
   private dateFormat: string;
 
@@ -22,8 +20,7 @@ export class DetailMaintenancePage implements OnInit {
     private actRoute: ActivatedRoute,
     public apiService: ApiService,
     private navCtrl: NavController,
-    private appService: AppService,
-    private loadingCtrl: LoadingController,
+    private appService: AppService
   ) {
     this.id = this.actRoute.snapshot.paramMap.get("id");
   }
@@ -40,70 +37,53 @@ export class DetailMaintenancePage implements OnInit {
 
   onChange($event) {
     this.dateFormat = this.appService.getDate($event);
-    console.log(this.dateFormat);
   }
 
   public getMaintenanceById() {
     this.apiService.getMaintenanceById(this.id).
       subscribe(response => {
         this.maintenance = response;
-        console.log("response", this.maintenance);
       });
   }
 
   public getWorkshops() {
     this.apiService.getWorkshops().subscribe(response => {
       this.workshops = response;
-      console.log("response:", this.workshops);
     })
   }
 
   async savedata(data) {
 
-    if (await this.appService.formValidation(data)) {
-      await this.presentLoading();
+    if (await this.appService.formValidation(data, "maintenance")) {
+      await this.appService.presentLoading(1);
       this.maintenance.data = this.dateFormat;
 
       if (this.id) {
-        console.log(this.id);
-        console.log(this.maintenance);
         try {
           await this.apiService.updateMaintenance(this.id, this.maintenance).subscribe(response => {
-            this.loading.dismiss();
+            this.appService.presentLoading(0);
             this.appService.presentToast("Manutenção atualizado com exito!")
             this.navCtrl.navigateRoot("/maintenances");
           })
         } catch (error) {
           this.appService.presentToast(error);
-          this.loading.dismiss();
+          this.appService.presentLoading(0);
+          console.log(error);
         }
-
       } else {
         try {
-          console.log(data);
           this.apiService.createMaintenance(data).subscribe((response) => {
-            console.log('response:', response);
+            this.appService.presentLoading(0);
+            this.appService.presentToast("Manutenção criado com exito!")
             this.navCtrl.navigateRoot("/maintenances");
           });
-
-          this.loading.dismiss();
-          this.appService.presentToast("Manutenção criado com exito!")
-          this.navCtrl.navigateRoot("/maintenances");
-
         } catch (error) {
           this.appService.presentToast(error);
-          this.loading.dismiss();
+          this.appService.presentLoading(0);
           console.log(error);
         }
       }
     }
-  }
-
-  async presentLoading() {
-
-    this.loading = await this.loadingCtrl.create({ message: "Espere.." });
-    return this.loading.present();
-
   }
 
 }
